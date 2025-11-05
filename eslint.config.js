@@ -1,7 +1,7 @@
-import { recommended } from "eslint-config-manzdev";
+//import { recommended } from "eslint-config-manzdev";
 
 export default [
-  ...recommended,
+ // ...recommended,
   {
     rules: {
       /* Tus reglas aquí */

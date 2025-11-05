@@ -32,13 +32,13 @@ app.get('/', (req, res) => {
 // Ruta Login
 app.get("/login", (req, res) => {
   res.render("login", {
-    pageTitle: "Login - Marea 🐢🌊"
+    pageTitle: "Login - Marea"
   });
 });
 
 // Ruta Sign Up
 app.get("/signup", (req, res) => {
   res.render("signup", {
-    pageTitle: "Sign Up - Marea 🐢🌊"
+    pageTitle: "Sign Up - Marea"
   });
 });

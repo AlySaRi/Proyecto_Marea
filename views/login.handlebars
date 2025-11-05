@@ -1,0 +1,25 @@
+<section class="auth-screen">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="/images/logo.png" alt="Marea Logo">
+  </div>
+
+  <!-- Títulos -->
+  <div class="auth-header">
+    <h2>Sign In</h2>
+    <p>Sign in now to start your marine journal and track your ocean adventures!</p>
+  </div>
+
+  <!-- Formulario -->
+  <form action="/login" method="POST" class="auth-form">
+    <input type="email" name="email" placeholder="Email Address" required>
+    <div class="password-container">
+      <input type="password" name="password" placeholder="Password" required>
+      <a href="/forgot-password" class="forgot-password">Forgot password?</a>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+
+  <!-- Opción para registrarse -->
+  <p class="auth-footer">Don’t have an account? <a href="/signup">Sign Up</a></p>
+</section>

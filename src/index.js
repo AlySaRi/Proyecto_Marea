@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Leer datos de los archivos JSON 
-const journalData = JSON.parse(readFileSync('./turtle-journal.json', 'utf-8'));
+//const journalData = JSON.parse(readFileSync('./turtle-journal.json', 'utf-8'));
 
 // Configurar Handlebars
 app.engine('handlebars', engine());
@@ -25,9 +25,20 @@ app.listen(PORT, () => {
 // Ruta principal
 app.get('/', (req, res) => {
   res.render('home', {
-    pageTitle: 'Inicio',
-    intro: journalData.intro,
-    entries: journalData.entries
+    pageTitle: 'Marea',
   });
 });
 
+// Ruta Login
+app.get("/login", (req, res) => {
+  res.render("login", {
+    pageTitle: "Login - Marea 🐢🌊"
+  });
+});
+
+// Ruta Sign Up
+app.get("/signup", (req, res) => {
+  res.render("signup", {
+    pageTitle: "Sign Up - Marea 🐢🌊"
+  });
+});

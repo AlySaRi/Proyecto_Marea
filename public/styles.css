@@ -138,3 +138,8 @@
 .home-screen .signup-text a:hover {
   text-decoration: underline;
 }
+
+.back-button {
+  height: 5%;
+  width: 5%;
+}

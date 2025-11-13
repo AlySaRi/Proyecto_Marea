@@ -39,10 +39,10 @@
   width: 100%;
 }
 
-.password-container .forgot-password {
+.forgot-password {
   position: absolute;
-  right: 10px;
-  top: 50%;
+  right: 0;
+  top: 90%;
   transform: translateY(-50%);
   font-size: 0.85rem;
   color: #ffd60a;

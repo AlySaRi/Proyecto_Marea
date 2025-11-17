@@ -42,3 +42,10 @@ app.get("/signup", (req, res) => {
     pageTitle: "Sign Up - Marea"
   });
 });
+
+//Ruta Gallery
+app.get("/gallery", (req, res) => {
+  res.render("gallery", {
+    pageTitle: "Gallery - Marea"
+  });
+});

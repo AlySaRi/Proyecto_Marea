@@ -49,3 +49,4 @@ app.get("/gallery", (req, res) => {
     pageTitle: "Gallery - Marea"
   });
 });
+

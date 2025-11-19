@@ -1,0 +1,86 @@
+
+/* Estilo para el diálogo */
+dialog {
+  border: none;                        /* sin borde duro */
+  border-radius: 12px;                 /* esquinas más suaves */
+  padding: 25px 30px;
+  width: 450px;                        /* tamaño cómodo */
+  max-width: 90%;                      /* responsive */
+  background-color: #fff;           /* fondo blanco limpio */
+  box-shadow: 0 8px 20px rgb(0 0 0 / 15%); /* sombra moderna */
+  animation: fade-in 0.25s ease;        /* animación sutil */
+  font-family: sans-serif;
+}
+
+/* Fondo al abrir el diálogo */
+dialog::backdrop {
+  background-color: rgb(0 102 204 / 35%); /* azul suave */
+  backdrop-filter: blur(2px);               /* efecto de desenfoque elegante */
+}
+
+/* Animación del diálogo */
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+    transform: scale(0.95);  /* pequeño zoom */
+  }
+
+  to {
+    opacity: 100%;
+    transform: scale(1);
+  }
+}
+
+/* Contenedor del botón */
+.menu-gallery {
+  text-align: right;
+  margin: 20px;
+  padding-right: 200px;
+}
+
+/* Botón */
+.menu-gallery button {
+  background-color: #39f;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+}
+
+.menu-gallery button:hover {
+  background-color: #0073e6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgb(0 0 0 / 15%);
+}
+
+.menu-gallery button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+}
+
+.mis-recuerdos {
+  color: #1c34b8;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+  letter-spacing: 2px;
+  margin: 40px 0;
+  transition: all 0.3s ease;
+}
+
+.animales-guardados {
+  background-color: #6cabeb;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-gallery {
+  background-color: #1c34b8;
+  color: #fff;
+  text-align: center;    
+  padding: 15px 0; 
+}

@@ -1,32 +1,90 @@
-<h1>Mis recuerdos</h1>
+<h1 class="mis-recuerdos">Mis recuerdos</h1><hr>
+
+<section class="menu-gallery">
+<menu>
+  <button id="up-picture">Subir foto</button>
+</menu>
+</section>
+
+<!-- <dialog con formulario -->
+<dialog id="placeDialog">
+  <form action="<!--defnir ruta POST Ej: /places-->" method="<!--POST/dialog-->" enctype="multipart/form-data">
+  <p>Subir foto</p>
+    <fieldset>
+      <label for="title">Lugar donde fue visto:</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        required
+        placeholder="Ej: Cala del Portitxol"
+      >
+      <hr>
+      <label for="image">Imagen:</label>
+      <input
+        type="file"
+        id="image"
+        name="image"
+        accept="image/*"
+        required
+      >
+      <small>Máximo 5MB</small>
+      <img id="preview" src="" alt="Vista previa" style="display:none; width: 300px; margin-top: 10px;">
+    </fieldset>
+    
+    <menu>
+      <button id="cancel" value="cancel">Cancelar</button>
+      <button type="submit" value="add">+ Añadir/Analizar</button>
+    </menu>
+  </form>
+</dialog>
 
 
-<!-- IMPORTANTE: añadir enctype="multipart/form-data" -->
-<form action="<!--defnir ruta POST Ej: /places--> " method="POST" enctype="multipart/form-data">
-  <fieldset>  
-    <label for="title">Lugar donde fue visto:</label>
-    <input
-      type="text"
-      id="title"
-      name="title"
-      required
-      placeholder="Ej: Cala del Portitxol"
-    >
-    <label for="image">Imagen:</label>
-    <input
-      type="file"
-      id="image"
-      name="image"
-      accept="image/*"
-      required
-    >
-    <small>Máximo 5MB</small>
-  </fieldset>
-  <button type="submit">+ Añadir/Analizar</button>
-</form> 
+<script>
+if (typeof document !== "undefined") {
+  document.addEventListener("DOMContentLoaded", () => {
+    const openButton = document.getElementById("up-picture");
+    const cancelButton = document.getElementById("cancel");
+    const placeDialog = document.getElementById("placeDialog");
+    const imageInput = document.getElementById("image");
+    const preview = document.getElementById("preview");
 
-<hr>
+    // Abrir el diálogo
+    openButton.addEventListener("click", () => {
+      placeDialog.showModal();
+      // Limpiar preview cada vez que se abre
+      preview.src = "";
+      preview.style.display = "none";
+      imageInput.value = "";
+    });
 
+    // Cerrar diálogo
+    cancelButton.addEventListener("click", () => {
+      placeDialog.close();
+    });
+
+    // Previsualización de la imagen
+    imageInput.addEventListener("change", () => {
+      const file = imageInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          preview.src = reader.result;
+          preview.style.display = "block"; // Mostrar la imagen
+        };
+        reader.readAsDataURL(file);
+      } else {
+        preview.src = "";
+        preview.style.display = "none";
+      }
+    });
+  });
+}
+</script>
+
+
+
+<section class="animales-guardados">
 <h2>Animales guardados</h2>
 
 {{#if places.length}}
@@ -47,3 +105,8 @@
 {{else}}
   <p>No hay fotos aún.</p>
 {{/if}}
+</section>
+
+<section class="footer-gallery">
+  <footer>© 2025 Mis recuerdos.</footer>
+</section>

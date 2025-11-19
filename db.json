@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Calamar",
+      "location": "Islas Columbretes, Comunidad Valenciana",
+      "description": "    El calamar es un molusco marino con cuerpo alargado, tentáculos con ventosas y una “saco” interno donde almacena tinta para defenderse.\r\n  \r\n  ",
+      "imageUrl": "/uploads/1763582894831-calamardo.png"
+    },
+    {
+      "id": 2,
+      "title": "Caballito de mar",
+      "location": "Cabo de Gata, Almería",
+      "description": "    El caballito de mar es un pez diminuto con cuerpo curvado, cabeza como de caballo, y una cola prensil para agarrarse a plantas marinas.\r\n  \r\n  ",
+      "imageUrl": "/uploads/1763582917841-caballito-mar.webp"
+    },
+    {
+      "id": 3,
+      "title": "Estrella de Mar",
+      "location": "Islas Medes, Girona",
+      "description": "    La estrella de mar es un animal marino con un cuerpo en forma de estrella, normalmente con 5 brazos (aunque algunas tienen más), y su piel puede ser lisas o rugosa. Tiene una gran capacidad de regeneración: si pierde un brazo, lo puede volver a crecer.  \r\n  ",
+      "imageUrl": "/uploads/1763582933939-estrellita.jfif"
+    }
+  ]
+}

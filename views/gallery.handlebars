@@ -2,55 +2,23 @@
 
 <section class="menu-gallery">
 <menu>
-  <button id="up-picture">Subir foto</button>
+  <button id="exit">Salir del perfil</button>
 </menu>
-</section>
 
-<!-- <dialog con formulario -->
-<dialog id="placeDialog">
-  <form action="<!--defnir ruta POST Ej: /places-->" method="<!--POST/dialog-->" enctype="multipart/form-data">
-  <p>Subir foto</p>
-    <fieldset>
-      <label for="title">Lugar donde fue visto:</label>
-      <input
-        type="text"
-        id="title"
-        name="title"
-        required
-        placeholder="Ej: Cala del Portitxol"
-      >
-      <hr>
-      <label for="image">Imagen:</label>
-      <input
-        type="file"
-        id="image"
-        name="image"
-        accept="image/*"
-        required
-      >
-      <small>Máximo 5MB</small>
-      <img id="preview" src="" alt="Vista previa" style="display:none; width: 300px; margin-top: 10px;">
-    </fieldset>
-    
-    <menu>
-      <button id="cancel" value="cancel">Cancelar</button>
-      <button type="submit" value="add">+ Añadir/Analizar</button>
-    </menu>
-  </form>
-</dialog>
 
 
 <script>
 if (typeof document !== "undefined") {
   document.addEventListener("DOMContentLoaded", () => {
-    const openButton = document.getElementById("up-picture");
+    const addNewCard = document.getElementById("addNewCard");
     const cancelButton = document.getElementById("cancel");
     const placeDialog = document.getElementById("placeDialog");
     const imageInput = document.getElementById("image");
     const preview = document.getElementById("preview");
 
     // Abrir el diálogo
-    openButton.addEventListener("click", () => {
+    
+    addNewCard.addEventListener("click", () => {
       placeDialog.showModal();
       // Limpiar preview cada vez que se abre
       preview.src = "";
@@ -85,27 +53,69 @@ if (typeof document !== "undefined") {
 
 
 <section class="animales-guardados">
-<h2>Animales guardados</h2>
 
-{{#if places.length}}
-  {{#each places}}
+  <!-- Tarjeta para subir nueva foto -->
+  <div class="add-new" id="addNewCard">
+    <span class="plus-symbol">+</span>
+    <p>Subir foto</p>
+  </div>
+
+  <!-- Tarjetas existentes -->
+  {{#each projects}}
     <div>
       <h3>{{this.title}}</h3>
-      <a href="/places/{{this.id}}/edit">Editar</a> <!-- Link para editar -->
-      <br>
-      <br>
-      <img src="{{this.imageUrl}}" alt="{{this.title}}" width="300">
-      <form action="/places/{{this.id}}/delete" method="POST" style="display: inline;">
-      <br>
-      <br>
-        <button type="submit" onclick="return confirm('¿Eliminar este lugar?')">Eliminar</button> <!-- Botón para eliminar -->
+
+      {{#if this.imageUrl}}
+        <img src="{{this.imageUrl}}" alt="{{this.title}}" width="300">
+      {{/if}}
+
+      <br><br>
+
+      <a href="/projects/{{this.id}}">Ver</a>
+
+      <form action="/projects/{{this.id}}/delete" method="POST" style="display: inline;" onsubmit="return confirm('¿Eliminar este registro?')">
+        <button type="submit">Eliminar</button> 
       </form>
     </div>
   {{/each}}
-{{else}}
-  <p>No hay fotos aún.</p>
-{{/if}}
+
 </section>
+
+<!-- Dialog para subir foto -->
+<dialog id="placeDialog">
+  <form action="/projects" method="POST" enctype="multipart/form-data">
+    <p>Subir foto</p>
+    <fieldset>
+
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="title" required placeholder="Tortuga/Añadir con IA">
+
+      <br><br>
+
+      <label for="location">Lugar donde se encontró:</label>
+      <input type="text" id="location" name="location" required placeholder="Ej: Cala del Portitxol">
+
+      <br><br>
+
+      <label for="description">Descripción:</label>
+      <textarea id="description" name="description" placeholder="Escribe una descripción/O con la IA..." rows="3" style="width: 100%; resize: vertical;"></textarea>
+
+      <br><br>
+
+      <label for="image">Imagen:</label>
+      <input type="file" id="image" name="image" accept="image/*" required>
+      <small>Máximo 5MB</small>
+      <img id="preview" src="" alt="Vista previa" style="display:none; width: 300px; margin-top: 10px;">
+    </fieldset>
+
+    <menu>
+      <button type="submit" value="add">Guardar</button>
+      <button id="cancel" value="cancel">Cancelar</button>
+    </menu>
+  </form>
+</dialog>
+
+
 
 <section class="footer-gallery">
   <footer>© 2025 Mis recuerdos.</footer>

@@ -11,7 +11,7 @@
   "editor.minimap.maxColumn": 120,
   "editor.minimap.showSlider": "mouseover",
   "editor.minimap.side": "right",
-  "editor.minimap.autohide": false,
+  "editor.minimap.autohide": "none",
   "editor.minimap.enabled": true,
   "editor.minimap.size": "proportional",
   "editor.bracketPairColorization.enabled": true,

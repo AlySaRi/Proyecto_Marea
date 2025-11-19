@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 // Configurar Handlebars
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
-app.set('views', './views');
+app.set('views', './src/views'); 
 
 // Servir archivos estáticos (imágenes, CSS, etc.)
 app.use(express.static('public'));

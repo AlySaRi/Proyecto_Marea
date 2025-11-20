@@ -20,6 +20,13 @@
       "location": "Islas Medes, Girona",
       "description": "    La estrella de mar es un animal marino con un cuerpo en forma de estrella, normalmente con 5 brazos (aunque algunas tienen más), y su piel puede ser lisas o rugosa. Tiene una gran capacidad de regeneración: si pierde un brazo, lo puede volver a crecer.  \r\n  ",
       "imageUrl": "/uploads/1763582933939-estrellita.jfif"
+    },
+    {
+      "id": 4,
+      "title": "Medusa Huevo Frito",
+      "location": "Campello, Alacant",
+      "description": "    Parece un huevo frito.\r\n  ",
+      "imageUrl": "/uploads/1763588629361-huevo.jfif"
     }
   ]
 }

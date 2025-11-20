@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 //const journalData = JSON.parse(readFileSync('./turtle-journal.json', 'utf-8'));
 
 
-//Configurar Multer (upload)
+//Configuración Multer (upload)
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, './public/uploads/'); // carpeta donde se guardarán las imágenes
@@ -28,7 +28,7 @@ const upload = multer({ storage });
 
 
 
-// Configurar LowDB
+// Configuración LowDB
 const adapter = new JSONFile('db.json');
 const db = new Low(adapter, { projects: [] });
 
@@ -75,7 +75,6 @@ app.get("/signup", (req, res) => {
     pageTitle: "Sign Up - Marea"
   });
 });
-
 
 
 //Ruta Gallery
@@ -147,7 +146,7 @@ app.post('/projects', upload.single('image'), async (req, res) => {
     : 1;
 
   const newProject = {
-    id: newId, // genera un id único
+    id: newId, 
     title,
     location,
     description,
@@ -157,7 +156,7 @@ app.post('/projects', upload.single('image'), async (req, res) => {
   db.data.projects.push(newProject);
   await db.write();
 
-  res.redirect('/gallery'); // vuelve a la galería después de guardar
+  res.redirect('/gallery?success=true'); 
 });
 
 
@@ -171,7 +170,7 @@ app.post('/projects/:id', upload.single('image'), async (req, res) => {
     return res.status(404).send("Proyecto no encontrado");
   }
 
-  // Actualizar texto
+  // Actualiza el texto
   project.title = req.body.title;
   project.location = req.body.location;
   project.description = req.body.description;
@@ -183,7 +182,7 @@ app.post('/projects/:id', upload.single('image'), async (req, res) => {
 
   await db.write();
 
-  res.redirect('/projects/' + req.params.id);
+  res.redirect('/projects/' + req.params.id); 
 });
 
 
@@ -199,6 +198,6 @@ app.post('/projects/:id/delete', async (req, res) => {
     await db.write();                 // guardar cambios en db.json
     res.redirect('/gallery');         // volver a la galería
   } else {
-    res.status(404).send('Proyecto no encontrado');
+    res.status(404).send('Proyecto no encontrado');  //Aquí habrá q res.redirect a /404
   }
 });

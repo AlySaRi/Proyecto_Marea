@@ -1,21 +1,38 @@
 
+.body-gallery {
+  background-color: #b4d7f7;
+}
+
+/* Mensaje de éxito al guardar tarjeta */
+#alert-success {
+  text-align: center;
+  top: 20px;                /* Desde arriba */
+  right: 20px;              /* Desde la derecha */
+  background-color: #146aeb; /* Verde éxito */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  z-index: 1000;            /* Siempre encima */
+  opacity: 50%;
+  transition: opacity 0.5s ease; /* Para desvanecer suavemente */
+}
+
 /* Estilo para el diálogo */
 dialog {
-  border: none;                        /* sin borde duro */
-  border-radius: 12px;                 /* esquinas más suaves */
+  border: none;                       
+  border-radius: 12px;                 
   padding: 25px 30px;
-  width: 450px;                        /* tamaño cómodo */
-  max-width: 90%;                      /* responsive */
-  background-color: #fff;           /* fondo blanco limpio */
-  box-shadow: 0 8px 20px rgb(0 0 0 / 15%); /* sombra moderna */
-  animation: fade-in 0.25s ease;        /* animación sutil */
-  font-family: sans-serif;
+  width: 450px;                       
+  max-width: 90%;                      
+  background-color: #fff;          
+  box-shadow: 0 8px 20px rgb(0 0 0 / 15%); /* sombra */
+  animation: fade-in 0.25s ease;        /* animación */
 }
 
 /* Fondo al abrir el diálogo */
 dialog::backdrop {
   background-color: rgb(0 102 204 / 35%); /* azul suave */
-  backdrop-filter: blur(2px);               /* efecto de desenfoque elegante */
+  backdrop-filter: blur(2px);               /* efecto de desenfoque */
 }
 
 /* Animación del diálogo */
@@ -39,31 +56,28 @@ dialog::backdrop {
 }
 
 /* Botón */
-.menu-gallery button {
+.menu-gallery button {  /* El botón */
   background-color: #39f;
   color: white;
   border: none;
-  padding: 12px 25px;
-  font-size: 1.1rem;
+  padding: 12px 15px;
+  font-size: 1rem;
   font-weight: bold;
   border-radius: 20px;
-  cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
 }
 
-.menu-gallery button:hover {
+.menu-gallery button:hover {  
   background-color: #0073e6;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgb(0 0 0 / 15%);
+  transform: translateY(-2px); /* Levanta el botón */
 }
 
 .menu-gallery button:active {
   transform: translateY(0);
-  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
 }
 
-.mis-recuerdos {
+.mis-recuerdos { /* Cabecera-Título */
   color: #1c34b8;
   text-align: center;
   text-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
@@ -72,15 +86,14 @@ dialog::backdrop {
   transition: all 0.3s ease;
 }
 
-.footer-gallery {
-  background-color: #1c34b8;
-  color: #fff;
+.footer-gallery {  /* pie */
+  color: #1f1cd4;
   text-align: center;    
   padding: 15px 0; 
 }
 
 /* Contenedor principal de la galería */
-.animales-guardados {
+.animales-guardados {   /* grid responsive */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -105,7 +118,7 @@ dialog::backdrop {
 /* Imagen de cada proyecto */
 .animales-guardados img {
   max-width: 100%;
-  height: auto;
+  height: 200px;
   border-radius: 8px;
   margin-bottom: 10px;
 }
@@ -115,19 +128,39 @@ dialog::backdrop {
   margin: 10px 0 5px;
 }
 
-.animales-guardados a button,
-.animales-guardados form button {
-  margin: 5px 3px;
-  padding: 5px 12px;
-  border: none;
+/* Botones y enlaces con mismo estilo */
+.animales-guardados .project-btn {
+  display: inline-block;          /* Hace que <a> se comporte como botón */
+  margin: 3px 2px;
+  padding: 4px 10px;
   border-radius: 5px;
-  cursor: pointer;
-  background-color: #4caf50;
   color: white;
-  transition: background-color 0.2s;
+  text-decoration: none;          /* Quita subrayado de <a> */
+  border: none;                   /* Para botones */
+  text-align: center;             
+  font-family: inherit;           /* Mantener fuente del contenedor */
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  font-size: 0.9rem;       /* Para igualar tamaño */
+  line-height: 1.2;        /* Para normalizar botones */
+  appearance: none;        /* Quita estilos propios del sistema */
 }
 
-.animales-guardados a button:hover,
-.animales-guardados form button:hover {
+/* Botón Ver (verde) */
+.animales-guardados .ver-btn {
+  background-color: #4caf50;
+}
+
+.animales-guardados .ver-btn:hover {
   background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+/* Botón Eliminar (rojo) */
+.animales-guardados .eliminar-btn {
+  background-color: #f05b5b;
+}
+
+.animales-guardados .eliminar-btn:hover {
+  background-color: #d30e0e;
+  transform: translateY(-2px);
 }

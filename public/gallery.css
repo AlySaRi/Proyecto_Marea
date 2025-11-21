@@ -1,0 +1,174 @@
+
+.body-gallery {
+  background-color: #b4d7f7;
+}
+
+/* Mensaje de éxito al guardar tarjeta */
+#alert-success {
+  text-align: center;
+  top: 20px;                /* Desde arriba */
+  right: 20px;              /* Desde la derecha */
+  background-color: #146aeb; /* Verde éxito */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  z-index: 1000;            /* Siempre encima */
+  opacity: 50%;
+  transition: opacity 0.5s ease; /* Para desvanecer suavemente */
+}
+
+/* Estilo para el diálogo */
+dialog {
+  border: none;                       
+  border-radius: 12px;                 
+  padding: 25px 30px;
+  width: 450px;                       
+  max-width: 90%;                      
+  background-color: #fff;          
+  box-shadow: 0 8px 20px rgb(0 0 0 / 15%); /* sombra */
+  animation: fade-in 0.25s ease;        /* animación */
+}
+
+/* Fondo al abrir el diálogo */
+dialog::backdrop {
+  background-color: rgb(0 102 204 / 35%); /* azul suave */
+  backdrop-filter: blur(2px);               /* efecto de desenfoque */
+}
+
+/* Animación del diálogo */
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+    transform: scale(0.95);  /* pequeño zoom */
+  }
+
+  to {
+    opacity: 100%;
+    transform: scale(1);
+  }
+}
+
+/* Contenedor del botón */
+.menu-gallery {
+  text-align: right;
+  margin: 20px;
+  padding-right: 200px;
+}
+
+/* Botón */
+.menu-gallery button {  /* El botón */
+  background-color: #39f;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+}
+
+.menu-gallery button:hover {  
+  background-color: #0073e6;
+  transform: translateY(-2px); /* Levanta el botón */
+}
+
+.menu-gallery button:active {
+  transform: translateY(0);
+}
+
+.mis-recuerdos { /* Cabecera-Título */
+  color: #1c34b8;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+  letter-spacing: 2px;
+  margin: 40px 0;
+  transition: all 0.3s ease;
+}
+
+.footer-gallery {  /* pie */
+  color: #1f1cd4;
+  text-align: center;    
+  padding: 15px 0; 
+}
+
+/* Contenedor principal de la galería */
+.animales-guardados {   /* grid responsive */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Cada tarjeta de proyecto */
+.animales-guardados div {
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.animales-guardados div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgb(0 0 0 / 20%);
+}
+
+/* Imagen de cada proyecto */
+.animales-guardados img {
+  max-width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Títulos y botones */
+.animales-guardados h3 {
+  margin: 10px 0 5px;
+}
+
+/* Botones y enlaces con mismo estilo */
+.animales-guardados .project-btn {
+  display: inline-block;          /* Hace que <a> se comporte como botón */
+  margin: 3px 2px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;          /* Quita subrayado de <a> */
+  border: none;                   /* Para botones */
+  text-align: center;             
+  font-family: inherit;           /* Mantener fuente del contenedor */
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  font-size: 0.9rem;       /* Para igualar tamaño */
+  line-height: 1.2;        /* Para normalizar botones */
+  appearance: none;        /* Quita estilos propios del sistema */
+}
+
+/* Botón Ver (verde) */
+.animales-guardados .ver-btn {
+  background-color: #4caf50;
+}
+
+.animales-guardados .ver-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+/* Botón Eliminar (rojo) */
+.animales-guardados .eliminar-btn {
+  background-color: #f05b5b;
+}
+
+.animales-guardados .eliminar-btn:hover {
+  background-color: #d30e0e;
+  transform: translateY(-2px);
+}
+
+/* --- TARJETAS CLICABLES --- */
+
+/* Opcional: animación hover como la de tus tarjetas */
+.animales-guardados .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px rgba(4 55 219 / 20%);
+}

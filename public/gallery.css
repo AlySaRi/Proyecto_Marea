@@ -164,3 +164,11 @@ dialog::backdrop {
   background-color: #d30e0e;
   transform: translateY(-2px);
 }
+
+/* --- TARJETAS CLICABLES --- */
+
+/* Opcional: animación hover como la de tus tarjetas */
+.animales-guardados .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px rgba(4 55 219 / 20%);
+}

@@ -61,7 +61,7 @@ if (typeof document !== "undefined") {
 }
 </script>
 <script>   //Mensaje de éxito
-  // Revisamos si en la URL existe ?success=true
+  // Revisamos si en la URL existe [?success=true]
   const params = new URLSearchParams(window.location.search);
   if(params.get('success') === 'true'){
     const alert = document.getElementById('alert-success');
@@ -85,22 +85,17 @@ if (typeof document !== "undefined") {
 
   <!-- Tarjetas existentes -->
   {{#each projects}}
-    <div>
+  <a href="/projects/{{this.id}}" class="card-link">
+    <div class="card">
       <h3>{{this.title}}</h3>
 
       {{#if this.imageUrl}}
         <img src="{{this.imageUrl}}" alt="{{this.title}}" width="300">
       {{/if}}
-
-      <br><br>
-
-      <a href="/projects/{{this.id}}" class="project-btn ver-btn" role="button">Ver</a>  <!-- Se comporta como un botón -->
-
-      <form action="/projects/{{this.id}}/delete" method="POST" style="display: inline;" onsubmit="return confirm('¿Eliminar este registro?')">
-        <button type="submit" class="project-btn eliminar-btn">Eliminar</button> 
-      </form>
     </div>
-  {{/each}}
+  </a>  
+  
+ {{/each}} 
 
 </section>
 

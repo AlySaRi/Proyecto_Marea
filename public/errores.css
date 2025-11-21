@@ -1,18 +1,16 @@
 error-msg {
-     /* красный с прозрачностью */;      /* цвет ошибки */
-    font-size: 0.85rem;     /* размер текста */
-    font-weight: bold;       /* жирность */
-    margin: 7px 0;           /* отступ сверху и снизу */
-    display: block;          /* чтобы текст занимал всю ширину */
-    white-space: normal;     /* разрешаем перенос строк */
-    word-wrap: break-word;   /* переносим длинные слова */
+    font-size: 0.85rem;
+    font-weight: bold;     
+    margin: 7px 0;          
+    display: block;    
+    white-space: normal;    
+    word-wrap: break-word;   
     overflow-wrap: break-word;
-    line-height: 1.4;        /* расстояние между строками */
+    line-height: 1.4;        
 }
 
-/* Адаптив для мобильных */
 @media (max-width: 480px) {
     .error-msg {
-        font-size: 0.75rem; /* чуть меньше текст на маленьких экранах */
+        font-size: 0.75rem; 
     }
 }

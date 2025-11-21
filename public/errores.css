@@ -1,0 +1,16 @@
+error-msg {
+    font-size: 0.85rem;
+    font-weight: bold;     
+    margin: 7px 0;          
+    display: block;    
+    white-space: normal;    
+    word-wrap: break-word;   
+    overflow-wrap: break-word;
+    line-height: 1.4;        
+}
+
+@media (max-width: 480px) {
+    .error-msg {
+        font-size: 0.75rem; 
+    }
+}

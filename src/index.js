@@ -51,9 +51,6 @@ app.listen(PORT, () => {
 });
 
 
-
-
-
 //RUTAS
 // Ruta principal
 app.get('/', (req, res) => {
@@ -75,7 +72,6 @@ app.get("/signup", (req, res) => {
     pageTitle: "Sign Up - Marea"
   });
 });
-
 
 //Ruta Gallery
 app.get("/gallery", async (req, res) => {
@@ -201,3 +197,9 @@ app.post('/projects/:id/delete', async (req, res) => {
     res.status(404).send('Proyecto no encontrado');  //Aquí habrá q res.redirect a /404
   }
 });
+
+// La ruta catch-all va AL FINAL
+app.use((req, res) => {
+  res.status(404).render('404');
+});
+

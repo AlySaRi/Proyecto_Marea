@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "node index.js",
     "build": "rm -rf dist && vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"

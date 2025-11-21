@@ -42,3 +42,8 @@ app.get("/signup", (req, res) => {
     pageTitle: "Sign Up - Marea"
   });
 });
+
+// La ruta catch-all va AL FINAL
+app.use((req, res) => {
+  res.status(404).render('404');
+});

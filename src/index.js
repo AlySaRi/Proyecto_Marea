@@ -6,6 +6,8 @@ import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
 import multer from 'multer';
 import fs from 'fs';
+import { v2 as cloudinary } from 'cloudinary';
+import upload from '../config/multer.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,32 +16,34 @@ const PORT = process.env.PORT || 3000;
 //const journalData = JSON.parse(readFileSync('./turtle-journal.json', 'utf-8'));
 
 
-//Configuración Multer (upload)
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, './public/uploads/'); // carpeta donde se guardarán las imágenes
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + file.originalname); // nombre único
-  }
-});
 
-const upload = multer({ storage });
+//Configurar Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
 
 
 // Configuración LowDB
 const adapter = new JSONFile('db.json');
 const db = new Low(adapter, { projects: [] });
-
 // Leer datos iniciales
 await db.read();
+
+
+// Middlewares
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
 
 // Configurar Handlebars
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
+
+
 
 // Servir archivos estáticos (imágenes, CSS, etc.)
 app.use(express.static('public'));
@@ -136,6 +140,15 @@ app.post('/projects', upload.single('image'), async (req, res) => {
    // Obtener datos del formulario
   const { title, location, description } = req.body;
 
+  const b64 = Buffer.from(req.file.buffer).toString('base64');
+  const dataURI = `data:${req.file.mimetype};base64,${b64}`;
+
+    // Subir a Cloudinary
+  const result = await cloudinary.uploader.upload(dataURI, {
+    folder: "marea-projects",
+    resource_type: "auto"
+  });
+
   // Generar ID único
   const newId = db.data.projects.length > 0
     ? Math.max(...db.data.projects.map(p => p.id)) + 1
@@ -146,7 +159,9 @@ app.post('/projects', upload.single('image'), async (req, res) => {
     title,
     location,
     description,
-    imageUrl: '/uploads/' + req.file.filename
+    imageUrl: result.secure_url,
+    imagePublicId: result.public_id,
+    createdAt: new Date().toISOString()
   };
 
   db.data.projects.push(newProject);
@@ -173,8 +188,18 @@ app.post('/projects/:id', upload.single('image'), async (req, res) => {
 
   // Si el usuario subió nueva imagen → reemplazar imageUrl
   if (req.file) {
-    project.imageUrl = '/uploads/' + req.file.filename;
+    const b64 = Buffer.from(req.file.buffer).toString('base64');
+    const dataURI = `data:${req.file.mimetype};base64,${b64}`;
+
+    const result = await cloudinary.uploader.upload(dataURI, {
+      folder: "marea-projects",
+      resource_type: "auto"
+  });
+  project.imageUrl = result.secure_url;
+    project.imagePublicId = result.public_id;
+    project.updatedAt = new Date().toISOString();
   }
+
 
   await db.write();
 

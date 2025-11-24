@@ -2,31 +2,39 @@
   "projects": [
     {
       "id": 1,
-      "title": "Calamar",
+      "title": "Calamar gigante",
       "location": "Islas Columbretes, Comunidad Valenciana",
-      "description": "    El calamar es un molusco marino con cuerpo alargado, tentáculos con ventosas y una “saco” interno donde almacena tinta para defenderse.\r\n  \r\n  ",
-      "imageUrl": "/uploads/1763582894831-calamardo.png"
+      "description": "            El calamar es un molusco marino con cuerpo alargado, tentáculos con ventosas y una “saco” interno donde almacena tinta para defenderse.\r\n  \r\n  \r\n  \r\n  ",
+      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764005743/marea-projects/iokfk46zw7dwpgwolmxo.png",
+      "imagePublicId": "marea-projects/iokfk46zw7dwpgwolmxo",
+      "updatedAt": "2025-11-24T17:35:44.051Z"
     },
     {
       "id": 2,
       "title": "Caballito de mar",
       "location": "Cabo de Gata, Almería",
-      "description": "    El caballito de mar es un pez diminuto con cuerpo curvado, cabeza como de caballo, y una cola prensil para agarrarse a plantas marinas.\r\n  \r\n  ",
-      "imageUrl": "/uploads/1763582917841-caballito-mar.webp"
+      "description": "        El caballito de mar es un pez diminuto con cuerpo curvado, cabeza como de caballo, y una cola prensil para agarrarse a plantas marinas.\r\n  \r\n  \r\n  ",
+      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764005813/marea-projects/dmctuvrzxysjzqhulges.webp",
+      "imagePublicId": "marea-projects/dmctuvrzxysjzqhulges",
+      "updatedAt": "2025-11-24T17:36:54.170Z"
     },
     {
       "id": 3,
       "title": "Medusa Huevo Frito",
       "location": "Campello, Alacant",
-      "description": "    Parece un huevo frito.\r\n  ",
-      "imageUrl": "/uploads/1763588629361-huevo.jfif"
+      "description": "        Parece un huevo frito.\r\n  \r\n  ",
+      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764005831/marea-projects/tkfqxuuikv9muwlybbw8.jpg",
+      "imagePublicId": "marea-projects/tkfqxuuikv9muwlybbw8",
+      "updatedAt": "2025-11-24T17:37:12.078Z"
     },
     {
       "id": 4,
       "title": "Estrella de mar",
       "location": "Islas Medes, Girona",
-      "description": "    La estrella de mar es un invertebrado marino con cuerpo en forma de estrella, capaz de regenerar sus brazos y que se alimenta principalmente de moluscos.\r\n  ",
-      "imageUrl": "/uploads/1763710073573-estrellita.jfif"
+      "description": "        La estrella de mar es un invertebrado marino con cuerpo en forma de estrella, capaz de regenerar sus brazos y que se alimenta principalmente de moluscos.\r\n  \r\n  ",
+      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764005847/marea-projects/jy1jrjis9nzw1le3h31z.jpg",
+      "imagePublicId": "marea-projects/jy1jrjis9nzw1le3h31z",
+      "updatedAt": "2025-11-24T17:37:27.901Z"
     }
   ]
 }

@@ -1,30 +1,49 @@
+
 <section class="auth-screen">
-  <!-- Logo -->
-  <div class="logo">
-    <img src="/images/logo.png" alt="Marea Logo">
-  </div>
+ <div class="sign-up">
 
-  
- <!-- Boton Back -->
-  <a  href='javascript:history.back()'><img class="back-button" src="/images/back_button.png" alt=""></a>
+  <img class="captura-de-pantalla" src="/images/turtle.png" />
 
-  <!-- Títulos -->
-  <div class="auth-header">
-    <h2>Sign Up</h2>
-    <p>Sign up now to create your Marea Journal and explore the marine world!</p>
-  </div>
+<!-- Boton Back -->
+  <a  href='javascript:history.back()'>
+    <img class="chevron-backward" src="/images/chevron_backward.png" alt="Back">
+  </a>
 
-  <!-- Formulario -->
+<!-- Títulos -->
+  <div class="text-wrapper-5">Sign Up</div> 
+  <p class="p">Sign in now to acces your records and save new ones.</p>
+
+ <!-- Formulario real para enviar datos -->
   <form action="/signup" method="POST" class="auth-form">
+
+    <div class="input-group">
     <input id="name" type="text" name="name" placeholder="Name">
+    </div>
+
+    <div class="input-group">
     <input id="email" type="email" name="email" placeholder="Email Address">
+    </div>
+
+    <div class="input-group">
     <input id="password" type="password" name="password" placeholder="Password">
+    </div>
 
-    <button type="submit">Sign Up</button>
-</form>
+    
+    <button type="submit" class="div">SIGN UP</button>
+    
+  </form>
 
-<script src="/js/validacionSignup.js"></script>
+   
+    <!-- Footer / login -->
+    <p class="already-have-an">
+      <span class="text-wrapper">Already have an account? </span>
+      <span class="span">Sign In</span>
+    </p>
 
-  <!-- Opción para iniciar sesión -->
-  <p class="auth-footer">Already have an account? <a href="/login">Sign In</a></p>
+  </div>
+
+ 
+
+  <script src="/js/validacionSignup.js"></script>
 </section>
+

@@ -87,6 +87,12 @@ app.get("/gallery", async (req, res) => {
   });
 });
 
+//Ruta Forgot-password
+app.get("/forgot-password", async (req, res) => {
+  res.render("forgot-password", {
+    pageTitle: "Forgot Password - Marea"
+  });
+});
 
 //Ruta ID
 app.get('/gallery/:id', async (req, res) => {

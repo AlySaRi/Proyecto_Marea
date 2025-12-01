@@ -1,32 +1,74 @@
-<section class="auth-screen">
-  <!-- Logo -->
-  <div class="logo">
-    <img src="/images/logo.png" alt="Marea Logo">
-  </div>
 
- <!-- Boton Back -->
-  <a href='javascript:history.back()'><img class="back-button" src="/images/back_button.png" alt=""></a>
+<div class="log-in">
 
-  <!-- Títulos -->
-  <div class="auth-header">
-    <h2>Sign In</h2>
-    <p>Sign in now to start your marine journal and track your ocean adventures!</p>
-  </div>
+  <!-- Logo o captura -->
+  <img class="captura-de-pantalla" src="/images/turtle.png" />
+
+  <!-- Back button -->
+  <button class="chevron-backward" onclick="history.back()">
+    <img src="/images/chevron_backward.png" alt="Back" />
+  </button>
+
+   <!-- Título -->
+  <div class="text-wrapper-5">Sign In</div>
+
+  <!-- Texto descriptivo -->
+  <p class="p">Sign in now to access your records and save new ones.</p>
 
   <!-- Formulario -->
   <form action="/login" method="POST" class="auth-form">
-    <input id="email" type="email" name="email" placeholder="Email Address">
 
-    <div class="password-container">
-      <input id="password" type="password" name="password" placeholder="Password">
-      <a class="forgot-password">Forgot password?</a>
+    <!-- Email -->
+    <input 
+      type="email" 
+      name="email" 
+      placeholder="Email Address" 
+      class="text-wrapper-3 input-field email" />
+
+    <!-- Línea decorativa debajo del email -->
+    <img class="img" src="image/line-3.svg" />
+
+    <!-- Password -->
+    <input 
+      type="password" 
+      name="password" 
+      placeholder="Password" 
+      class="text-wrapper-2 input-field password" />
+
+    <!-- Forgot Password -->
+    <div class="text-wrapper-4">
+      <a href="/forgot-password">Forgot Password?</a>
     </div>
-    
-    <button type="submit">Login</button>
-</form>
+
+    <!-- Botón LOGIN -->
+    <button type="submit" class="button-cat login-btn">
+      <div class="div">LOGIN</div>
+    </button>
+  </form>
+
+  <!-- Footer -->
+  <p class="don-t-have-an">
+    <span class="text-wrapper">Don’t have an account? </span> 
+    <span class="span"><a href="/signup">Sign Up</a></span>
+  </p>
+
+  <!-- Línea decorativa -->
+  <img class="line" src="img/line-2.svg" />
+</div>
+
+
 
 <script src="/js/validacionLogin.js"></script>
 
-  <!-- Opción para registrarse -->
-  <p class="auth-footer">Don’t have an account? <a href="/signup">Sign Up</a></p>
-</section>
+
+
+
+
+
+
+
+
+
+
+
+

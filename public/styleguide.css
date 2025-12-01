@@ -1,0 +1,11 @@
+:root {
+  --primary-dark: rgb(9 65 116 / 100%);
+  --primary-medium: rgb(73 118 159 / 100%);
+  --primary-light: rgb(110 161 178 / 100%);
+  --secondary-dark: rgb(7 91 93 / 100%);
+  --secondary-base: rgb(77 195 181 / 100%);
+  --secondary-light: rgb(128 224 212 / 100%);
+  --callout: rgb(205 172 219 / 100%);
+  --neutral-dark: rgb(0 30 58 / 100%);
+  --neutral-light: rgb(245 250 253 / 100%);
+}

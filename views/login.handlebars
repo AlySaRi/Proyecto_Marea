@@ -1,13 +1,14 @@
 
+<section class="auth-screen">
 <div class="log-in">
 
   <!-- Logo o captura -->
   <img class="captura-de-pantalla" src="/images/turtle.png" />
 
-  <!-- Back button -->
-  <button class="chevron-backward" onclick="history.back()">
-    <img src="/images/chevron_backward.png" alt="Back" />
-  </button>
+ <!-- Boton Back -->
+  <a  href='javascript:history.back()'>
+    <img class="chevron-backward" src="/images/chevron_backward.png" alt="Back">
+  </a>
 
    <!-- Título -->
   <div class="text-wrapper-5">Sign In</div>
@@ -18,22 +19,14 @@
   <!-- Formulario -->
   <form action="/login" method="POST" class="auth-form">
 
-    <!-- Email -->
-    <input 
-      type="email" 
-      name="email" 
-      placeholder="Email Address" 
-      class="text-wrapper-3 input-field email" />
+    <div class="input-group">
+    <input id="email" type="email" name="email" placeholder="Email Address">
+    </div>
 
-    <!-- Línea decorativa debajo del email -->
-    <img class="img" src="image/line-3.svg" />
+    <div class="input-group">
+    <input id="password" type="password" name="password" placeholder="Password">
+    </div>
 
-    <!-- Password -->
-    <input 
-      type="password" 
-      name="password" 
-      placeholder="Password" 
-      class="text-wrapper-2 input-field password" />
 
     <!-- Forgot Password -->
     <div class="text-wrapper-4">
@@ -52,14 +45,10 @@
     <span class="span"><a href="/signup">Sign Up</a></span>
   </p>
 
-  <!-- Línea decorativa -->
-  <img class="line" src="img/line-2.svg" />
-</div>
-
 
 
 <script src="/js/validacionLogin.js"></script>
-
+</section>
 
 
 

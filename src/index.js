@@ -9,12 +9,12 @@ import fs from 'fs';
 import { v2 as cloudinary } from 'cloudinary';
 import upload from '../config/multer.js';
 
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Leer datos de los archivos JSON 
 //const journalData = JSON.parse(readFileSync('./turtle-journal.json', 'utf-8'));
-
 
 
 //Configurar Cloudinary
@@ -143,6 +143,7 @@ app.get('/projects/:id/edit', async (req, res) => {
 app.post('/projects', upload.single('image'), async (req, res) => {
   await db.read();
 
+  
    // Obtener datos del formulario
   const { title, location, description } = req.body;
 

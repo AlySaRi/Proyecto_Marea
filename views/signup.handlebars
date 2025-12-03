@@ -1,8 +1,10 @@
 
 <section class="auth-screen">
- <div class="sign-up">
+<div class="sign-up">
 
-  <img class="captura-de-pantalla" src="/images/turtle.png" />
+<!-- Logo o captura -->
+<img class="captura-de-pantalla" src="images/LogoIso.png" />
+
 
 <!-- Boton Back -->
   <a  href='javascript:history.back()'>
@@ -11,9 +13,12 @@
 
 <!-- Títulos -->
   <div class="text-wrapper-5">Sign Up</div> 
+<!-- Texto descriptivo -->
   <p class="p">Sign in now to acces your records and save new ones.</p>
 
- <!-- Formulario -->
+
+<!-- Formulario -->
+
   <form action="/signup" method="POST" class="auth-form">
 
     <div class="input-group">
@@ -28,8 +33,10 @@
     <input id="password" type="password" name="password" placeholder="Password">
     </div>
 
-    
-    <button type="submit" class="div">SIGN UP</button>
+    <!-- Botón SING UP -->
+  <button type="submit" class="button-cat login-btn">
+      <div class="div">SING UP</div>
+    </button>
     
   </form>
 
@@ -37,7 +44,7 @@
     <!-- Footer / login -->
     <p class="already-have-an">
       <span class="text-wrapper">Already have an account? </span>
-      <span class="span">Sign In</span>
+      <span class="span"><a href="/login">Sign In</a></span>
     </p>
 
   </div>

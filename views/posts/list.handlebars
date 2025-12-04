@@ -1,0 +1,47 @@
+
+<h1 class="mis-recuerdos">Mis recuerdos</h1>
+<hr>
+
+<section class="menu-gallery">
+  <menu>
+    <a href="/posts/new">
+      <button id="addNewPost">Nuevo Post</button>
+    </a>
+    <button id="exit" onclick="location.href='/'">Salir del perfil</button>
+  </menu>
+</section>
+
+<div id="alert-success" style="display:none;">
+  Se ha guardado correctamente
+</div>
+
+<section class="posts-guardados">
+
+  <!-- Tarjetas existentes -->
+  {{#each posts}}
+    <a href="/posts/{{this.id}}" class="card-link">
+      <div class="card">
+        <h3>{{this.title}}</h3>
+        {{#if this.imageUrl}}
+          <img src="{{this.imageUrl}}" alt="{{this.title}}" width="300">
+        {{/if}}
+      </div>
+    </a>
+  {{/each}}
+
+</section>
+
+<footer class="footer-gallery">© 2025 Mis recuerdos.</footer>
+
+<script>
+  // Mensaje de éxito
+  const params = new URLSearchParams(window.location.search);
+  if(params.get('success') === 'true'){
+    const alert = document.getElementById('alert-success');
+    alert.style.display = 'block';  
+    setTimeout(() => {
+      alert.style.opacity = 0;
+      setTimeout(() => alert.style.display = 'none', 500);
+    }, 3000);
+  }
+</script>

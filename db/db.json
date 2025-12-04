@@ -1,8 +1,8 @@
 {
-  "projects": [
+  "posts": [
     {
       "id": 1,
-      "title": "Calamar gigante super gigante",
+      "title": "Calamar gigante",
       "location": "Islas Columbretes, Comunidad Valenciana",
       "description": "                El calamar es un molusco marino con cuerpo alargado, tentáculos con ventosas y una “saco” interno donde almacena tinta para defenderse.\r\n  \r\n  \r\n  \r\n  \r\n  ",
       "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764005743/marea-projects/iokfk46zw7dwpgwolmxo.png",
@@ -35,6 +35,16 @@
       "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764005847/marea-projects/jy1jrjis9nzw1le3h31z.jpg",
       "imagePublicId": "marea-projects/jy1jrjis9nzw1le3h31z",
       "updatedAt": "2025-11-24T17:37:27.901Z"
+    },
+    {
+      "id": 5,
+      "title": "Orca",
+      "commonName": "*Orcinus*",
+      "location": "Barco",
+      "description": "Orcas, or killer whales, are apex predators and the largest dolphin species. These highly intelligent, social marine mammals are instantly recognizable by their striking black and white coloration. Found in all oceans, they live in complex family pods and are known for sophisticated hunting techniques.",
+      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764867722/marea-projects/wgli6bg8dq5dlphsahzp.png",
+      "imagePublicId": "marea-projects/wgli6bg8dq5dlphsahzp",
+      "createdAt": "2025-12-04T17:02:02.483Z"
     }
   ]
 }

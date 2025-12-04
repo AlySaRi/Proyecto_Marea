@@ -1,0 +1,50 @@
+<h1>Subir nuevo post</h1>
+<hr>
+
+<section class="new-post-container">
+
+  <form action="/posts" method="POST" enctype="multipart/form-data">
+
+   <!-- <label for="title">Nombre:</label>
+    <input type="text" id="title" name="title" required placeholder="Nombre del post">
+
+    <label for="description">Descripción:</label>
+    <textarea id="description" name="description" rows="4" style="width:100%; resize: vertical;" placeholder="Escribe una descripción..."></textarea>
+-->
+<label for="location">Lugar donde se encontró:</label>
+    <input type="text" id="location" name="location" required placeholder="Ej: Cala del Portitxol">
+    
+    <label for="image">Imagen:</label>
+    <input type="file" id="image" name="image" accept="image/*" required>
+    <img id="preview" src="" alt="Vista previa" style="display:none; width:300px; margin-top:10px;">
+
+    <button type="submit">Guardar</button>
+    <a href="/list"><button type="button">Cancelar</button></a>
+
+  </form>
+
+</section>
+
+<footer>© 2025 Mis recuerdos.</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const imageInput = document.getElementById("image");
+  const preview = document.getElementById("preview");
+
+  imageInput.addEventListener("change", () => {
+    const file = imageInput.files[0];
+    if(file){
+      const reader = new FileReader();
+      reader.onload = () => {
+        preview.src = reader.result;
+        preview.style.display = "block";
+      };
+      reader.readAsDataURL(file);
+    } else {
+      preview.src = "";
+      preview.style.display = "none";
+    }
+  });
+});
+</script>

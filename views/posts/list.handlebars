@@ -21,9 +21,9 @@
   {{#each posts}}
     <a href="/posts/{{this.id}}" class="card-link">
       <div class="card">
-        <h3>{{this.title}}</h3>
+        <h3>{{this.commonName}}</h3>
         {{#if this.imageUrl}}
-          <img src="{{this.imageUrl}}" alt="{{this.title}}" width="300">
+          <img src="{{this.imageUrl}}" alt="{{this.commonName}}" width="300">
         {{/if}}
       </div>
     </a>

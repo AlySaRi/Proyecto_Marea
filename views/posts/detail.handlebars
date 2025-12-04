@@ -105,17 +105,27 @@
 
 <section class="project-detail">
 
-  <h1>{{post.title}}</h1>
-  <hr>
+ <h1>
+    {{#if post.commonName}}
+      {{post.commonName}}
+    {{else}}
+      {{post.species}}
+    {{/if}}
+  </h1>
 
   <!-- Imagen grande -->
   {{#if post.imageUrl}}
     <img src="{{post.imageUrl}}" alt="{{post.title}}">
   {{/if}}
 
+  <!-- Especie -->
+  {{#if post.species}}
+    <h3>Especie:</h3><p><strong>{{post.species}}</strong></p>
+  {{/if}}
+
   <!-- Lugar -->
   {{#if post.location}}
-    <p><strong>Lugar donde se encontró:</strong> {{post.location}}</p>
+    <h3>Lugar donde se encontró:</h3><p><strong>{{post.location}}</strong></p>
   {{/if}}
 
   <!-- Descripción -->

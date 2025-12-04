@@ -125,13 +125,18 @@
 
 
 <section class="edit-container">
-  <h1>Editar Proyecto</h1>
+  <h1>Editar Post</h1>
   <hr>
 
   <form action="/posts/{{post.id}}" method="POST" enctype="multipart/form-data">
 
-    <label for="title">Nombre:</label>
-    <input type="text" id="title" name="title" value="{{post.title}}" required>
+
+    <label for="commonName">Nombre común:</label>
+    <input type="text" id="commonName" name="commonName" value="{{post.commonName}}" required>
+
+    <label for="species">Especie:</label>
+    <input type="text" id="species" name="species" value="{{post.species}}" required>
+
 
     <label for="location">Lugar donde se encontró:</label>
     <input type="text" id="location" name="location" value="{{post.location}}" required>

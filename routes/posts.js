@@ -3,8 +3,30 @@ import db from "../db/lowdb.js";
 import { v2 as cloudinary } from "cloudinary";
 import upload from "../config/multer.js";
 import { GoogleGenAI } from "@google/genai";
+import exifr from "exifr";
+
 
 const router = express.Router();
+
+async function getExifLocation(buffer) {
+  try {
+    const data = await exifr.parse(buffer);
+
+    if (!data) return null;
+
+    // Usar latitude/longitude calculados por exifr
+    const { latitude, longitude } = data;
+
+    if (latitude && longitude) {
+      return `${latitude}, ${longitude}`;
+    }
+
+    return null;
+  } catch (error) {
+    console.error("Error extrayendo EXIF GPS:", error);
+    return null;
+  }
+}
 
 /* CLOUDINARY CONFIG */
 cloudinary.config({
@@ -88,8 +110,8 @@ router.post('/posts', upload.single('image'), async (req, res) => {
     await db.read();
     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY});
   
-   // Obtener datos del formulario (borrar luego si eso)
-  const { title, location, description } = req.body;
+     // ---> Extraer GPS de la imagen
+  const location = await getExifLocation(req.file.buffer) || "Unknown";
 
 // Convertir el buffer a base64
   const b64 = Buffer.from(req.file.buffer).toString('base64');
@@ -98,11 +120,11 @@ router.post('/posts', upload.single('image'), async (req, res) => {
 const contents = [
   {
     inlineData: {
-      mimeType: "image/png",
+      mimeType: req.file.mimetype,
       data: b64,
     },
   },
-  { text: "Give me the specie of the animal in the picture in les than 15 characters" },
+  { text: "Give me only the scientific species name of the animal in the picture (genus + species if available) in les than 15 characters and whithout using *." },
 ];
 
 const aiSpecie = await ai.models.generateContent({
@@ -114,13 +136,13 @@ console.log(aiSpecie.text);
 
 const commonName = await ai.models.generateContent({
     model: "gemini-2.5-flash",
-    contents: `Give me the generic name of the animal ${aiSpecie.text} in less than 15 characters` ,
+    contents: `Give me ONLY the most widely used common name for the species "${aiSpecie.text}" in less than 15 characters. Use the shortest and most common accepted name (e.g., "orca", not "killer whale").` ,
   });
   console.log(commonName.text);
 
   const aiDescription = await ai.models.generateContent({
     model: "gemini-2.5-flash",
-    contents: `Give me a short description of ${aiSpecie.text} in less than 450 characters` ,
+    contents: `Give me a short description (max 450 characters) of the species "${aiSpecie.text} whithout using *."` ,
   });
   console.log(aiDescription.text);
 
@@ -138,7 +160,7 @@ const commonName = await ai.models.generateContent({
     // Crear objeto
   const newPost = {
     id: newId, 
-    title: aiSpecie.text,
+    species: aiSpecie.text,
     commonName:commonName.text,
     location,
     description: aiDescription.text,
@@ -169,7 +191,8 @@ router.post('/posts/:id', upload.single('image'), async (req, res) => {
   }
 
   // Actualiza el texto
-  post.title = req.body.title;
+  post.species = req.body.species;
+  post.commonName = req.body.commonName;
   post.location = req.body.location;
   post.description = req.body.description;
 

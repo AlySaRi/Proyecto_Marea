@@ -2,49 +2,53 @@
   "posts": [
     {
       "id": 1,
-      "title": "Calamar gigante",
-      "location": "Islas Columbretes, Comunidad Valenciana",
-      "description": "                El calamar es un molusco marino con cuerpo alargado, tentáculos con ventosas y una “saco” interno donde almacena tinta para defenderse.\r\n  \r\n  \r\n  \r\n  \r\n  ",
-      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764005743/marea-projects/iokfk46zw7dwpgwolmxo.png",
-      "imagePublicId": "marea-projects/iokfk46zw7dwpgwolmxo",
-      "updatedAt": "2025-11-24T17:35:44.051Z"
+      "species": "Loligo vulgaris",
+      "commonName": "Common squid",
+      "location": "Unknown",
+      "description": "Loligo vulgaris, the common European squid, is a torpedo-shaped cephalopod inhabiting the Mediterranean and Eastern Atlantic. It possesses eight arms, two longer retractile tentacles, and large eyes. Its skin, rich in chromatophores, enables rapid color changes for camouflage and communication. This species is an important part of marine ecosystems and is commercially fished.",
+      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764874735/marea-projects/u80qxejymh85s4d0uvmr.png",
+      "imagePublicId": "marea-projects/u80qxejymh85s4d0uvmr",
+      "createdAt": "2025-12-04T18:58:56.419Z"
     },
     {
       "id": 2,
-      "title": "Caballito de mar",
-      "location": "Cabo de Gata, Almería",
-      "description": "        El caballito de mar es un pez diminuto con cuerpo curvado, cabeza como de caballo, y una cola prensil para agarrarse a plantas marinas.\r\n  \r\n  \r\n  ",
-      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764005813/marea-projects/dmctuvrzxysjzqhulges.webp",
-      "imagePublicId": "marea-projects/dmctuvrzxysjzqhulges",
-      "updatedAt": "2025-11-24T17:36:54.170Z"
+      "species": "Hippocampus kuda",
+      "commonName": "Kuda seahorse",
+      "location": "Unknown",
+      "description": "Hippocampus kuda is a seahorse species, commonly known as the common or spotted seahorse. Found across the Indo-Pacific, it prefers shallow coastal waters, seagrass beds, and coral reefs. This unique fish is characterized by its upright posture, prehensile tail, and the male's ventral brood pouch where eggs are carried. Its coloration varies for camouflage within its diverse habitats.",
+      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764874782/marea-projects/qcejb7atgalmygigvll0.webp",
+      "imagePublicId": "marea-projects/qcejb7atgalmygigvll0",
+      "createdAt": "2025-12-04T18:59:43.054Z"
     },
     {
       "id": 3,
-      "title": "Medusa Huevo Frito",
-      "location": "Campello, Alacant",
-      "description": "        Parece un huevo frito.\r\n  \r\n  ",
-      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764005831/marea-projects/tkfqxuuikv9muwlybbw8.jpg",
-      "imagePublicId": "marea-projects/tkfqxuuikv9muwlybbw8",
-      "updatedAt": "2025-11-24T17:37:12.078Z"
+      "species": "Cotylorhiza",
+      "commonName": "Egg Jellyfish",
+      "location": "Unknown",
+      "description": "This striking jellyfish, often called the fried egg jellyfish, boasts a flattened, disk-shaped bell with a raised central dome, typically yellowish to brownish. Its short, frilly oral arms display a vibrant purplish-blue hue. Lacking long marginal tentacles, it's a common, beautiful sight in the Mediterranean Sea, known for its mild sting and often hosting symbiotic algae.",
+      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764874841/marea-projects/gnutmfaoaimhq1wfea1q.jpg",
+      "imagePublicId": "marea-projects/gnutmfaoaimhq1wfea1q",
+      "createdAt": "2025-12-04T19:00:42.095Z"
     },
     {
       "id": 4,
-      "title": "Estrella de mar",
-      "location": "Islas Medes, Girona",
-      "description": "        La estrella de mar es un invertebrado marino con cuerpo en forma de estrella, capaz de regenerar sus brazos y que se alimenta principalmente de moluscos.\r\n  \r\n  ",
-      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764005847/marea-projects/jy1jrjis9nzw1le3h31z.jpg",
-      "imagePublicId": "marea-projects/jy1jrjis9nzw1le3h31z",
-      "updatedAt": "2025-11-24T17:37:27.901Z"
+      "species": "Leiaster leachi",
+      "commonName": "Leach's seastar",
+      "location": "Unknown",
+      "description": "Leiaster leachi is a species of sea star, often called a brittle star, found in the Indo-Pacific. It has five smooth, cylindrical arms extending from a small central disc. Its coloration varies, typically in hues of red, orange, or brown. This marine invertebrate primarily feeds on detritus and small organic particles, playing a role in marine ecosystem cleanup. It inhabits coral reefs and rocky areas.",
+      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764874875/marea-projects/lgeuvqnl6peccfppx2lr.jpg",
+      "imagePublicId": "marea-projects/lgeuvqnl6peccfppx2lr",
+      "createdAt": "2025-12-04T19:01:15.921Z"
     },
     {
       "id": 5,
-      "title": "Orca",
-      "commonName": "*Orcinus*",
-      "location": "Barco",
-      "description": "Orcas, or killer whales, are apex predators and the largest dolphin species. These highly intelligent, social marine mammals are instantly recognizable by their striking black and white coloration. Found in all oceans, they live in complex family pods and are known for sophisticated hunting techniques.",
-      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764867722/marea-projects/wgli6bg8dq5dlphsahzp.png",
-      "imagePublicId": "marea-projects/wgli6bg8dq5dlphsahzp",
-      "createdAt": "2025-12-04T17:02:02.483Z"
+      "species": "Orcinus orca",
+      "commonName": "orca",
+      "location": "Unknown",
+      "description": "The killer whale, also known as the orca, is the largest member of the dolphin family and an apex marine predator. Recognized by its distinctive black and white coloration, this highly intelligent creature lives in complex, social pods. Found in all oceans, it uses sophisticated cooperative hunting strategies to pursue a diverse diet, ranging from fish and squid to seals and larger whales.",
+      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764875756/marea-projects/pbufmguz9brmqmddgai9.png",
+      "imagePublicId": "marea-projects/pbufmguz9brmqmddgai9",
+      "createdAt": "2025-12-04T19:15:57.085Z"
     }
   ]
 }

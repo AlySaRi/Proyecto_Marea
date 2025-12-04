@@ -49,6 +49,16 @@
       "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764875756/marea-projects/pbufmguz9brmqmddgai9.png",
       "imagePublicId": "marea-projects/pbufmguz9brmqmddgai9",
       "createdAt": "2025-12-04T19:15:57.085Z"
+    },
+    {
+      "id": 6,
+      "species": "Homo sapiens",
+      "commonName": "Human",
+      "location": "Blasco Ibañez, Valencia, Spain",
+      "description": "Homo sapiens are modern humans, uniquely characterized by their habitual bipedalism, large and complex brains, and sophisticated capacity for language, abstract thought, and culture. This species is known for its advanced tool-making, intricate social structures, and ability to inhabit and adapt to diverse global environments, profoundly shaping the planet.",
+      "imageUrl": "https://res.cloudinary.com/doifmplw0/image/upload/v1764878459/marea-projects/mucwdceafk4umk1iz6m0.jpg",
+      "imagePublicId": "marea-projects/mucwdceafk4umk1iz6m0",
+      "createdAt": "2025-12-04T20:01:00.081Z"
     }
   ]
 }

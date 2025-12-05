@@ -5,6 +5,7 @@ import upload from "../config/multer.js";
 import { GoogleGenAI } from "@google/genai";
 import exifr from "exifr";
 import Post from '../models/post.model.js';
+import { Parser } from'xml2js';
 
 const router = express.Router();
 
@@ -21,8 +22,32 @@ async function getExifLocation(buffer) {
     // Usar latitude/longitude calculados por exifr
     const { latitude, longitude } = data;
 
-    if (latitude && longitude) {
-      return `${latitude}, ${longitude}`;
+  if (latitude && longitude) {
+
+      const OPENMAPURL = "https://nominatim.openstreetmap.org/reverse";
+      const urlParams = new URLSearchParams ();
+
+      urlParams.append ('lat', latitude);
+      urlParams.append ('lon', longitude);
+
+      const completeURL = `${OPENMAPURL}?${urlParams.toString()}` ;
+
+      const location = await fetch (completeURL)
+      if (!location.ok) {
+        console.error("Error en openmap" + location.status + " " + location.statusText);
+      }
+
+      const locationXml = await location.text();
+
+      const parser = new Parser({ explicitArray: false});
+      const resultParser = await parser.parseStringPromise (locationXml);
+
+      const road = resultParser.reversegeocode.addressparts.road;
+      const city = resultParser.reversegeocode.addressparts.city;
+      const country = resultParser.reversegeocode.addressparts.country;
+      console.log (road + city + country);
+
+      return `${road}, ${city}, ${country}`;
     }
 
     return null;

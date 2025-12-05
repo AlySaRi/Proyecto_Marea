@@ -19,7 +19,7 @@
 
   <!-- Tarjetas existentes -->
   {{#each posts}}
-    <a href="/posts/{{this.id}}" class="card-link">
+    <a href="/posts/{{this._id}}" class="card-link">
       <div class="card">
         <h3>{{this.commonName}}</h3>
         {{#if this.imageUrl}}

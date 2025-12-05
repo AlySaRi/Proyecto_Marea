@@ -3,6 +3,8 @@ import express from "express";
 import { engine } from 'express-handlebars';
 
 import postRouter from "./routes/posts.js";
+import authRoutes from './routes/auth.js';
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;

@@ -1,5 +1,5 @@
 import express from 'express';
-import db from "../db/lowdb.js";
+import db from '../lowdb.js';
 import { v2 as cloudinary } from "cloudinary";
 import upload from "../config/multer.js";
 import { GoogleGenAI } from "@google/genai";

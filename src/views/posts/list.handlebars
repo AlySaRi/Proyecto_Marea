@@ -1,15 +1,5 @@
 
-<h1 class="mis-recuerdos">Mis recuerdos</h1>
-<hr>
 
-<section class="menu-gallery">
-  <menu>
-    <a href="/posts/new">
-      <button id="addNewPost">Nuevo Post</button>
-    </a>
-    <button id="exit" onclick="location.href='/'">Salir del perfil</button>
-  </menu>
-</section>
 
 <div id="alert-success" style="display:none;">
   Se ha guardado correctamente
@@ -31,9 +21,58 @@
 
 </section>
 
-<footer class="footer-gallery">© 2025 Mis recuerdos.</footer>
 
-<script>
+
+  <div class="gallery">
+    <img class="chatgpt-image-dic" src="/images/BackgroundGallery.png" />
+    
+    <div class="component">
+      <!-- <div class="entries">
+        Aquí irían las entradas del diario cuando existan 
+      </div>-->
+    </div>
+
+  
+    <div class="icon-and-text">
+      <img class="logoiso-center" src="/images/LogoIso.png" />
+      <div class="text">
+        <div class="text-wrapper">Start Journaling</div>
+      </div>
+        <p class="create-your-personal">
+          Create your personal sea journal. <br /> 
+          Tap the plus button to get started.
+        </p>
+      
+    </div>
+
+    <div class="nav">
+
+      <div class="button" onclick="location.href='/'">
+        <a href="/"></a>
+        <img class="img" src="/images/ButtonHome.png" />
+      </div>
+
+      <button class="div-wrapper" onclick="location.href='/posts/new'">
+        <a href="/posts/new"></a>
+        <div class="text-wrapper-2">
+        <img class="img" src="/images/Button+.png" />
+      </button>
+
+      <div class="user-wrapper" onclick="location.href=">
+        <a href=""></a>
+        <img class="img" src="/images/ButtonProfile.png" />
+      </div>
+    </div>
+
+    <p class="welcome-user">
+      <span class="span">Welcome,<br /></span> 
+      <span class="text-wrapper-3">User</span>
+    </p>
+
+    <img class="logoiso" src="/images/LogoIso.png" />
+  </div>
+  
+  <script>
   // Mensaje de éxito
   const params = new URLSearchParams(window.location.search);
   if(params.get('success') === 'true'){
@@ -45,3 +84,4 @@
     }, 3000);
   }
 </script>
+

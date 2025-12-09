@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="detail">
+
+      {{#if post.imageUrl}}
+      <img class="swimming-green-sea"  src="{{post.imageUrl}}" alt="{{post.title}}" />
+      {{/if}}
+
+      <img class="vector" src="/images/Vector.png" />
+
+      <a href="javascript:history.back()">
+      <img class="back" src="/images/Back.png" alt="Back">
+    </a>
+
+    <a href="/posts/{{post._id}}/edit">
+      <img class="edit" src="/images/Edit.png" alt="Edit">
+    </a>
+      
+      <div class="description">
+        <div class="text-wrapper">Description</div>
+        <p class="div">
+          {{#if post.description}}
+          {{post.description}}
+          {{else}}
+          <i>No hay descripción añadida.</i>
+          {{/if}}
+        </p>
+      </div>
+      <div class="species">
+        <div class="text-wrapper-2"> Species : </div>
+        <div class="text-wrapper-3">
+          {{#if post.species}}
+          {{post.species}}
+          {{else}}
+          <i>Unknown</i>
+          {{/if}}
+          </div>
+      </div>
+      <div class="title-location">
+        <img class="location-on" src="/images/location_on.png" />
+        <div class="text-wrapper-4">
+          {{#if post.location}}
+          {{post.location}}
+          {{else}}
+          <i>Unknown</i>
+          {{/if}}
+        </div>
+
+        <div class="text-wrapper-5">
+          {{#if post.commonName}}
+          {{post.commonName}}
+          {{else}}
+          {{post.species}}
+          {{/if}}
+        </div>
+      </div>
+
+     <div class="delete-container">
+  <form action="/posts/{{post._id}}/delete" method="POST"
+        onsubmit="return confirm('¿Eliminar este registro?')">
+    <button type="submit" class="delete-button">Eliminar</button>
+  </form>
+</div>
+
+    </div>
+  </body>
+</html>

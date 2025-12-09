@@ -1,0 +1,45 @@
+<section class="auth-screen">
+  <div class="sign-up">
+
+    <!-- Logo -->
+    <img class="captura-de-pantalla" src="/images/LogoIso.png" />
+
+    <!-- Botón Back -->
+    <a href="javascript:history.back()">
+      <img class="chevron-backward" src="/images/chevron_backward.png" alt="Back">
+    </a>
+
+    <!-- Títulos -->
+    <div class="text-wrapper-5">Sign Up</div>
+    <p class="p">Sign in now to access your records and save new ones.</p>
+
+    <!-- Formulario -->
+    <form action="/signup" method="POST" class="auth-form">
+      <div class="input-group">
+        <input id="name" type="text" name="name" placeholder="Name">
+      </div>
+
+      <div class="input-group">
+        <input id="email" type="email" name="email" placeholder="Email Address">
+      </div>
+
+      <div class="input-group">
+        <input id="password" type="password" name="password" placeholder="Password">
+      </div>
+
+      <!-- Botón SIGN UP -->
+      <button type="submit" class="button-cat login-btn">
+        <div class="div">SIGN UP</div>
+      </button>
+    </form>
+
+    <!-- Footer / login -->
+    <p class="already-have-an">
+      <span class="text-wrapper">Already have an account? </span>
+      <span class="span"><a href="/login">Sign In</a></span>
+    </p>
+
+  </div>
+
+  <script src="/js/validacionAuth.js"></script>
+</section>

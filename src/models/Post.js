@@ -1,0 +1,14 @@
+import mongoose from "mongoose";
+
+const postSchema = new mongoose.Schema({
+  species: { type: String, required: true },
+  commonName: { type: String, required: true },
+  location: { type: String, default: "Unknown" },
+  description: { type: String, required: true },
+  imageUrl: { type: String, required: true },
+  imagePublicId: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now },
+});
+
+const Post = mongoose.model("Post", postSchema);
+export default Post;

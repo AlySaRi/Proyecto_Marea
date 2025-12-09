@@ -1,0 +1,46 @@
+<div class="edit detail">
+
+  <a href="javascript:history.back()">
+    <img class="back" src="/images/Back.png" alt="Back">
+  </a>
+
+  <!--Boton GUARDAR -->
+  <form class="save-top" action="/posts/{{post._id}}" method="POST" enctype="multipart/form-data">
+    <a href="#" onclick="document.querySelector('.edit-form').submit();">
+  <img class="save-icon" src="/images/Save.png" alt="Save">
+</a>s
+  </form>
+
+  <div class="edit-title">Editar Post</div>
+
+  <form class="edit-form" action="/posts/{{post._id}}" method="POST" enctype="multipart/form-data">
+
+    <label>Imagen actual:</label>
+    <img class="current-image" src="{{post.imageUrl}}" alt="Imagen actual">
+
+    <label>Cambiar imagen (opcional):</label>
+    <input type="file" name="image" accept="image/*">
+
+    <label>Nombre común</label>
+    <input type="text" name="commonName" value="{{post.commonName}}" required>
+
+    <label>Especie</label>
+    <input type="text" name="species" value="{{post.species}}" required>
+
+    <label>Lugar donde se encontró</label>
+    <input type="text" name="location" value="{{post.location}}" required>
+
+    <label>Descripción</label>
+    <textarea name="description" rows="3">{{post.description}}</textarea>
+
+  </form>
+
+  <!--  BOTÓN ELIMINAR  -->
+  <form class="delete-bottom"
+        action="/posts/{{post._id}}/delete"
+        method="POST"
+        onsubmit="return confirm('¿Eliminar este registro?')">
+    <button type="submit" class="delete-button">Eliminar</button>
+  </form>
+
+</div>

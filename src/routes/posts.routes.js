@@ -143,6 +143,7 @@ router.post("/posts", upload.single("image"), async (req, res) => {
       commonName: commonName.text,
       location,
       description: aiDescription.text,
+      //user_id:
       imageUrl: result.secure_url,
       imagePublicId: result.public_id,
     });

@@ -1,7 +1,8 @@
 import express from 'express';
-import crypto from 'crypto';
+import crypto, { hash } from 'crypto';
 import User from '../models/User.js';
 import { sendResetEmail } from '../utils/sendEmail.js';
+import bcrypt from 'bcryptjs'
 
 const router = express.Router();
 
@@ -14,6 +15,45 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   res.render('signup', { pageTitle: "Sign Up - Marea" });
 });
+
+//SIGN UP POST
+router.post('/signup', async (req, res) => {
+try {
+const { name, email, password } = req.body;
+const user = await User.findOne({ email });
+console.log (req.body)
+if (user) return res.status(404).send("Usuario ya existe");
+const hashpassword = await bcrypt.hash(password, 10);
+
+await User.create({
+  name,
+  email,
+  password: hashpassword,
+    });
+
+res.redirect("/login?success=true");
+  } catch (err) {
+    console.error("Error creando Usuario:", err);
+    res.status(500).send("Error al crearUsuario");
+    
+} })
+
+//LOGIN POST
+router.post('/login', async (req, res) => {
+try {
+const { email, password } = req.body;
+const user = await User.findOne({ email });
+if (!user) return res.status(404).send("Usuario no existe");
+const passwordCorrect = await bcrypt.compare(password, user.password);
+
+if (!passwordCorrect) return res.status(400).send("Password incorrecta");
+res.redirect("/gallery?success=true");
+
+  } catch (err) {
+    console.error("Error iniciando sesión:", err);
+    res.status(500).send("Error iniciando sesión");
+    
+} })
 
 // FORGOT PASSWORD FORM
 router.get('/forgot-password', (req, res) => {

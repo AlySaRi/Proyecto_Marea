@@ -5,7 +5,11 @@ const postSchema = new mongoose.Schema({
   commonName: { type: String, required: true },
   location: { type: String, default: "Unknown" },
   description: { type: String, required: true },
-  user_id: { type: mongoose.Schema.Types.ObjectId },
+   user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
   imageUrl: { type: String, required: true },
   imagePublicId: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },

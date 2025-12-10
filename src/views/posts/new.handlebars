@@ -1,41 +1,61 @@
-<h1>Subir nuevo post</h1>
-<hr>
 
-<section class="new-post-container">
+<div class="upload-photo">
+      <img class="chatgpt-image-dic" src="/images/BackgroundGallery.png" />
 
-  <form action="/posts" method="POST" enctype="multipart/form-data">
+      <form action="/posts" method="POST" enctype="multipart/form-data" class="form">
+
+        <div class="text-wrapper-3">Suported formats: JPG, PNG</div>
+        <div class="text-wrapper-4">Upload new post</div>
     
-    <label for="image">Imagen:</label>
-    <input type="file" id="image" name="image" accept="image/*" required>
-    <img id="preview" src="" alt="Vista previa" style="display:none; width:300px; margin-top:10px;">
+    <input type="file" id="image" name="image" accept="image/*" style="display:none" required>
 
-    <button type="submit">Guardar</button>
-    <a href="/gallery"><button type="button">Cancelar</button></a>
+<!-- Botón de upload que activa el input -->
+      <label for="image" class="upload-button">
+        <div class="text-wrapper-2">Upload Image</div>
+        <img class="upload" src="/images/Upload.png" />
+      </label>
 
-  </form>
+      <div class="div" id="imageName" style="display:none;">Image name lorem ipsum</div>
 
-</section>
+<!-- Preview de la imagen -->
+      <img class="swimming-green-sea" id="preview" src="" style="display:none;"/>
+      
+      <!-- Botones -->
+      <button type="submit" class="button-cat">
+        <div class="save-text">Save</div>
+      </button>
+      
+      <a href="/gallery">
+        <button type="button" class="home-wrapper">
+          <div class="text-wrapper">Cancel</div>
+        </button>
+      </a>
+      
+    </form>
+  </div>
 
-<footer>© 2025 Mis recuerdos.</footer>
+  
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const imageInput = document.getElementById("image");
-  const preview = document.getElementById("preview");
-
-  imageInput.addEventListener("change", () => {
-    const file = imageInput.files[0];
-    if(file){
+  // Preview de la imagen seleccionada
+  document.getElementById('image').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    const preview = document.getElementById('preview');
+    const imageName = document.getElementById('imageName');
+    
+    if (file) {
+      // Mostrar preview
       const reader = new FileReader();
-      reader.onload = () => {
-        preview.src = reader.result;
-        preview.style.display = "block";
+      reader.onload = function(event) {
+        preview.src = event.target.result;
+        preview.style.display = 'block'; // ← ESTO FALTABA
       };
       reader.readAsDataURL(file);
-    } else {
-      preview.src = "";
-      preview.style.display = "none";
+      
+      // Mostrar nombre del archivo
+      imageName.textContent = file.name;
+      imageName.style.display = 'block'; // ← ESTO FALTABA
     }
   });
-});
 </script>
+

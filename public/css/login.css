@@ -1,0 +1,164 @@
+/* CSS Login Screen */
+
+.log-in {
+  position: relative;
+  width: 301px;
+  height: 650px;
+  border-radius: 37px;
+  overflow: hidden;
+  border: none;
+  border-color: #000;
+  background: linear-gradient(
+    180deg, rgb(0 31 43 / 100%) 0%, rgb(1 12 42 / 100%) 100%
+  );
+}
+
+.log-in .don-t-have-an {
+  position: relative;
+  top: 0;
+  left: 20px;
+  width: 250px;
+  font-family: Barlow-Regular, Helvetica, sans-serif;
+  font-weight: 400;
+  color: var(--neutral-light);
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.log-in .text-wrapper {
+  font-family: Barlow-Regular, Helvetica, sans-serif;
+  font-weight: 400;
+  color: #f5fafd;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.log-in .span {
+  font-family: Barlow-Bold, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+.log-in .button-cat {
+  display: flex;
+  width: 256px;
+  height: 49px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 12px 20px;
+  position: absolute;
+  top: calc(50% + 106px);
+  left: calc(50% - 126px);
+  background-color: var(--primary-medium);
+  border-radius: 6px;
+}
+
+.log-in .div {
+  position: relative;
+  width: 194px;
+  height: 21px;
+  margin-top: -1px;
+  font-family: Barlow-Medium, Helvetica, sans-serif;
+  font-weight: 500;
+  color: var(--neutral-light);
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.log-in .text-wrapper-2 {
+  position: absolute;
+  top: 381px;
+  left: 37px;
+  width: 62px;
+  font-family: Barlow-Regular, Helvetica, sans-serif;
+  font-weight: 400;
+  color: var(--neutral-light);
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.log-in .text-wrapper-3 {
+  position: absolute;
+  top: 323px;
+  left: 36px;
+  width: 83px;
+  font-family: Barlow-Regular, Helvetica, sans-serif;
+  font-weight: 400;
+  color: var(--neutral-light);
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* text forgot password */
+.log-in .text-wrapper-4 {
+  position: relative;
+  top: -10px;
+  left: 165px;
+  width: 79px;
+  font-family: Barlow-Regular, Helvetica, sans-serif;
+  font-weight: 400;
+  color: var(--neutral-light);
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.log-in .text-wrapper-5 {
+  position: absolute;
+  top: 151px;
+  left: 30px;
+  width: 83px;
+  font-family: Barlow-SemiBold, Helvetica, sans-serif;
+  font-weight: 600;
+  color: var(--neutral-light);
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.log-in .p {
+  position: absolute;
+  top: 182px;
+  left: 31px;
+  width: 249px;
+  font-family: Barlow-Medium, Helvetica, sans-serif;
+  font-weight: 500;
+  color: var(--neutral-light);
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+}
+
+.log-in .chevron-backward {
+  position: absolute;
+  top: 76px;
+  left: 20px;
+  width: 38px;
+  height: 38px;
+}
+
+.log-in .captura-de-pantalla {
+  position: absolute;
+  top: 46px;
+  left: 163px;
+  width: 106px;
+  height: 112px;
+  aspect-ratio: 0.92;
+  object-fit: cover;
+}
+
+.log-in form.auth-form {
+  position: relative;
+  z-index: 100;
+}

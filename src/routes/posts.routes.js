@@ -5,6 +5,7 @@ import { GoogleGenAI } from "@google/genai";
 import exifr from "exifr";
 import Post from '../models/Post.js';
 import { Parser } from 'xml2js';
+import { checkSession } from "../middleware/auth.js";
 
 const router = express.Router();
 
@@ -63,9 +64,9 @@ router.get("/forgot-password", (req, res) => {
 });
 
 // Gallery
-router.get("/gallery", async (req, res) => {
+router.get("/gallery", checkSession, async (req, res) => {
   try {
-    const posts = await Post.find().lean();
+    const posts = await Post.find({ user: req.session.userId }).lean();
     res.render("posts/list", { pageTitle: "Posts - Marea", posts });
   } catch (err) {
     console.error("Error finding posts:", err);
@@ -74,7 +75,7 @@ router.get("/gallery", async (req, res) => {
 });
 
 // Nuevo post
-router.get("/posts/new", (req, res) => {
+router.get("/posts/new", checkSession, (req, res) => {
   res.render("posts/new", { pageTitle: "Nuevo Post - Marea" });
 });
 
@@ -103,7 +104,7 @@ router.get("/posts/:id/edit", async (req, res) => {
 });
 
 // Crear post
-router.post("/posts", upload.single("image"), async (req, res) => {
+router.post("/posts", checkSession, upload.single("image"), async (req, res) => {
   try {
     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     const location = (await getExifLocation(req.file.buffer)) || "Unknown";
@@ -143,7 +144,7 @@ router.post("/posts", upload.single("image"), async (req, res) => {
       commonName: commonName.text,
       location,
       description: aiDescription.text,
-      //user_id:
+      user: req.session.userId, // Asociar el post con el usuario logueado
       imageUrl: result.secure_url,
       imagePublicId: result.public_id,
     });

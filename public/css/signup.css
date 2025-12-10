@@ -37,6 +37,11 @@
 .sign-up .span {
   font-family: Barlow-Bold, Helvetica, sans-serif;
   font-weight: 700;
+  color: var(--secondary-light);
+}
+
+.sign-up .span a:visited {
+  color: var(--secondary-base); /* color al volver después de visitarlo */
 }
 
 .sign-up .button-cat {

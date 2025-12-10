@@ -25,8 +25,8 @@
 .home .don-t-have-an {
   position: absolute;
   top: calc(50% + 237px);
-  left: calc(50% - 96px);
-  width: 194px;
+  left: 22px;
+  width: 250px;
   font-family: Barlow-Regular, Helvetica, sans-serif;
   font-weight: 400;
   color: transparent;
@@ -43,7 +43,11 @@
 .home .span {
   font-family: Barlow-Bold, Helvetica, sans-serif;
   font-weight: 700;
-  color: #4dc3b5;
+  color: var(--secondary-light);
+}
+
+.home .span a:visited {
+  color: var(--secondary-base); /* color al volver después de visitarlo */
 }
 
 .home .button-cat {
@@ -166,22 +170,6 @@
   border-radius: 13.5px / 13.85px;
 }
 
-.detail .chevron-backward {
-  margin-top: 5px;
-  width: 20px;
-  height: 19px;
-  margin-left: 3px;
-  position: relative;
-}
-
-.detail .icon {
-  position: absolute;
-  width: 30.83%;
-  height: 50%;
-  top: 25%;
-  left: 33.33%;
-}
-
 .detail .edit {
   position: absolute;
   top: 41px;
@@ -193,11 +181,15 @@
   border-radius: 13.5px / 13.85px;
 }
 
-.detail .edit-2 {
-  margin-top: 6px;
-  width: 16px;
-  height: 16px;
-  margin-left: 6px;
+.detail .delete-button {
+  position: absolute;
+  top: 81px;
+  left: 251px;
+  width: 27px;
+  height: 28px;
+  display: flex;
+  background-color: var(--neutral-light);
+  border-radius: 13.5px / 13.85px;
 }
 
 .detail .description {
@@ -304,42 +296,6 @@
   line-height: normal;
 }
 
-/* Contenedor del botón de eliminar */
-.detail .delete-container {
-  position: absolute;
-  bottom: 20px;
-  left: 75px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-/* Botón de eliminar */
-.delete-button {
-  background: var(--secondary-dark); /* tono verde-azulado oscuro */
-  color: var(--neutral-light);
-  padding: 6px 12px; /* más pequeño */
-  border: 1px solid var(--secondary-base);
-  border-radius: 8px;
-  font-family: Barlow-Medium, Helvetica, sans-serif;
-  font-size: 12px; /* más pequeño */
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
-}
-
-.delete-button:hover {
-  background: var(--secondary-base); /* verde turquesa */
-  transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgb(0 0 0 / 30%);
-}
-
-.delete-button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
-}
-
 /* ===== Vista EDITAR  ===== */
 .edit.detail {
   padding-top: 200px; /* deja espacio para imagen */
@@ -419,36 +375,21 @@
 }
 
 /* Eliminar */
-.delete-bottom {
+.edit .delete-button2 {
   position: absolute;
-  bottom: 20px;
-  left: 75px;
-  width: 100%;
+  top: 90px;
+  left: 251px;
+  width: 27px;
+  height: 28px;
   display: flex;
-  justify-content: center;
-}
-
-.delete-bottom .delete-button {
-  background: var(--secondary-dark);
-  color: var(--neutral-light);
-  padding: 6px 12px;
-  border: 1px solid var(--secondary-base);
-  border-radius: 8px;
-  font-family: Barlow-Medium, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+  background-color: var(--neutral-light);
+  border-radius: 13.5px / 13.85px;
+  padding: 4px;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+  transition: 0.2s ease;
 }
 
-.delete-bottom .delete-button:hover {
-  background: var(--secondary-base); /* verde turquesa */
+.edit .delete-button2:hover {
   transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgb(0 0 0 / 30%);
-}
-
-.delete-bottom .delete-button:active{
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+  opacity: 90%;
 }

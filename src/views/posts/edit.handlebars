@@ -8,8 +8,16 @@
   <form class="save-top" action="/posts/{{post._id}}" method="POST" enctype="multipart/form-data">
     <a href="#" onclick="document.querySelector('.edit-form').submit();">
   <img class="save-icon" src="/images/Save.png" alt="Save">
-</a>s
+</a>
   </form>
+
+<form class="save-top" action="/posts/{{post._id}}/delete" method="POST"
+        onsubmit="return confirm('¿Eliminar este registro?')">
+  <a href="#" onclick="document.querySelector('.delete-form').submit();">
+  <img class="delete-button2" src="/images/delete.jpeg"  alt="Delete">
+  </a>
+  </form>
+
 
   <div class="edit-title">Editar Post</div>
 
@@ -35,12 +43,5 @@
 
   </form>
 
-  <!--  BOTÓN ELIMINAR  -->
-  <form class="delete-bottom"
-        action="/posts/{{post._id}}/delete"
-        method="POST"
-        onsubmit="return confirm('¿Eliminar este registro?')">
-    <button type="submit" class="delete-button">Eliminar</button>
-  </form>
 
 </div>

@@ -47,6 +47,10 @@ if (!user) return res.status(404).send("Usuario no existe");
 const passwordCorrect = await bcrypt.compare(password, user.password);
 
 if (!passwordCorrect) return res.status(400).send("Password incorrecta");
+
+// Crear sesión
+req.session.userId = user._id; // Guardar el ID del usuario en la sesión, ahora todas las solicitudes futuras tendrán acceso a req.session.userId
+
 res.redirect("/gallery?success=true");
 
   } catch (err) {

@@ -23,6 +23,13 @@
     <a href="/posts/{{post._id}}/edit">
       <img class="edit" src="/images/Edit.png" alt="Edit">
     </a>
+
+  
+  <form action="/posts/{{post._id}}/delete" method="POST"
+        onsubmit="return confirm('¿Eliminar este registro?')">
+    <button type="submit"><img class="delete-button" src="/images/delete.jpeg"  alt="Delete"></button>
+  </form>
+
       
       <div class="description">
         <div class="text-wrapper">Description</div>
@@ -63,12 +70,7 @@
         </div>
       </div>
 
-     <div class="delete-container">
-  <form action="/posts/{{post._id}}/delete" method="POST"
-        onsubmit="return confirm('¿Eliminar este registro?')">
-    <button type="submit" class="delete-button">Eliminar</button>
-  </form>
-</div>
+     
 
     </div>
   </body>

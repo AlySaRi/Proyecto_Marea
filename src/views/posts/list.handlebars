@@ -5,75 +5,64 @@
   Se ha guardado correctamente
 </div>
 
-<section class="posts-guardados">
-
-  <!-- Tarjetas existentes -->
-  {{#each posts}}
-    <a href="/posts/{{this._id}}" class="card-link">
-      <div class="card">
-        <h3>{{this.commonName}}</h3>
-        {{#if this.imageUrl}}
-          <img src="{{this.imageUrl}}" alt="{{this.commonName}}" width="300">
-        {{/if}}
-      </div>
-    </a>
-  {{/each}}
-
-</section>
-
-
-
-  <div class="gallery">
-    <img class="chatgpt-image-dic" src="/images/BackgroundGallery.png" />
-    
-    <div class="component">
-      <!-- <div class="entries">
-        Aquí irían las entradas del diario cuando existan 
-      </div>-->
-    </div>
-
+<div class="gallery">
+  <img class="chatgpt-image-dic" src="/images/BackgroundGallery.png" />
   
+  {{#if posts.length}}
+    <!-- SI HAY ENTRADAS: mostrar las tarjetas -->
+    <div class="component">
+      {{#each posts}}
+        <div class="entries" style="background-image: url('{{this.imageUrl}}');">
+         
+          <a href="/posts/{{this._id}}" class="detail-button-image">
+            <div class="ellipse"></div>
+            <div class="chevron-backward">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </a>
+          <div class="common-name">{{this.commonName}}</div>
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    <!-- SI NO HAY ENTRADAS: mostrar mensaje de inicio -->
     <div class="icon-and-text">
       <img class="logoiso-center" src="/images/LogoIso.png" />
       <div class="text">
         <div class="text-wrapper">Start Journaling</div>
       </div>
-        <p class="create-your-personal">
-          Create your personal sea journal. <br /> 
-          Tap the plus button to get started.
-        </p>
-      
+      <p class="create-your-personal">
+        Create your personal sea journal. <br /> 
+        Tap the plus button to get started.
+      </p>
+    </div>
+  {{/if}}
+
+  <div class="nav">
+    <div class="button" onclick="location.href='/'">
+      <img class="img" src="/images/ButtonHome.png" />
     </div>
 
-    <div class="nav">
+    <button class="div-wrapper" onclick="location.href='/posts/new'">
+      <img class="img" src="/images/Button+.png" />
+    </button>
 
-      <div class="button" onclick="location.href='/'">
-        <a href="/"></a>
-        <img class="img" src="/images/ButtonHome.png" />
-      </div>
-
-      <button class="div-wrapper" onclick="location.href='/posts/new'">
-        <a href="/posts/new"></a>
-        <div class="text-wrapper-2">
-        <img class="img" src="/images/Button+.png" />
-      </button>
-
-      <div class="user-wrapper" onclick="location.href=">
-        <a href=""></a>
-        <img class="img" src="/images/ButtonProfile.png" />
-      </div>
+    <div class="user-wrapper" onclick="location.href='/profile'">
+      <img class="img" src="/images/ButtonProfile.png" />
     </div>
-
-    <p class="welcome-user">
-      <span class="span">Welcome,<br /></span> 
-      <span class="text-wrapper-3">User</span>
-    </p>
-
-    <img class="logoiso" src="/images/LogoIso.png" />
   </div>
-  
-  <script>
-  // Mensaje de éxito
+
+  <p class="welcome-user">
+    <span class="span">Welcome,<br /></span> 
+    <span class="text-wrapper-3">User</span>
+  </p>
+
+  <img class="logoiso" src="/images/LogoIso.png" />
+</div>
+
+<script>
   const params = new URLSearchParams(window.location.search);
   if(params.get('success') === 'true'){
     const alert = document.getElementById('alert-success');
@@ -84,4 +73,3 @@
     }, 3000);
   }
 </script>
-

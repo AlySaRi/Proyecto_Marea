@@ -1,178 +1,4 @@
 
-.body-gallery {
-  background-color: #b4d7f7;
-}
-
-/* Mensaje de éxito al guardar tarjeta */
-#alert-success {
-  text-align: center;
-  top: 20px;                /* Desde arriba */
-  right: 20px;              /* Desde la derecha */
-  background-color: #146aeb; /* Verde éxito */
-  color: white;
-  padding: 15px 20px;
-  border-radius: 8px;
-  z-index: 1000;            /* Siempre encima */
-  opacity: 50%;
-  transition: opacity 0.5s ease; /* Para desvanecer suavemente */
-}
-
-/* Estilo para el diálogo */
-dialog {
-  border: none;                       
-  border-radius: 12px;                 
-  padding: 25px 30px;
-  width: 450px;                       
-  max-width: 90%;                      
-  background-color: #fff;          
-  box-shadow: 0 8px 20px rgb(0 0 0 / 15%); /* sombra */
-  animation: fade-in 0.25s ease;        /* animación */
-}
-
-/* Fondo al abrir el diálogo */
-dialog::backdrop {
-  background-color: rgb(0 102 204 / 35%); /* azul suave */
-  backdrop-filter: blur(2px);               /* efecto de desenfoque */
-}
-
-/* Animación del diálogo */
-@keyframes fade-in {
-  from {
-    opacity: 0%;
-    transform: scale(0.95);  /* pequeño zoom */
-  }
-
-  to {
-    opacity: 100%;
-    transform: scale(1);
-  }
-}
-
-/* Contenedor del botón */
-.menu-gallery {
-  text-align: right;
-  margin: 20px;
-  padding-right: 200px;
-}
-
-/* Botón */
-.menu-gallery button {  /* El botón */
-  background-color: #39f;
-  color: white;
-  border: none;
-  padding: 12px 15px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
-}
-
-.menu-gallery button:hover {  
-  background-color: #0073e6;
-  transform: translateY(-2px); /* Levanta el botón */
-}
-
-.menu-gallery button:active {
-  transform: translateY(0);
-}
-
-.mis-recuerdos { /* Cabecera-Título */
-  color: #1c34b8;
-  text-align: center;
-  text-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
-  letter-spacing: 2px;
-  margin: 40px 0;
-  transition: all 0.3s ease;
-}
-
-.footer-gallery {  /* pie */
-  color: #1f1cd4;
-  text-align: center;    
-  padding: 15px 0; 
-}
-
-/* Contenedor principal de la galería */
-.posts-guardados {   /* grid responsive */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-/* Cada tarjeta de proyecto */
-.posts-guardados div {
-  background-color: #fdfdfd;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
-  padding: 15px;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.posts-guardados div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgb(0 0 0 / 20%);
-}
-
-/* Imagen de cada proyecto */
-.posts-guardados img {
-  max-width: 100%;
-  height: 200px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-/* Títulos y botones */
-.posts-guardados h3 {
-  margin: 10px 0 5px;
-}
-
-/* Botones y enlaces con mismo estilo */
-.posts-guardados .project-btn {
-  display: inline-block;          /* Hace que <a> se comporte como botón */
-  margin: 3px 2px;
-  padding: 4px 10px;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;          /* Quita subrayado de <a> */
-  border: none;                   /* Para botones */
-  text-align: center;             
-  font-family: inherit;           /* Mantener fuente del contenedor */
-  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
-  font-size: 0.9rem;       /* Para igualar tamaño */
-  line-height: 1.2;        /* Para normalizar botones */
-  appearance: none;        /* Quita estilos propios del sistema */
-}
-
-/* Botón Ver (verde) */
-.posts-guardados .ver-btn {
-  background-color: #4caf50;
-}
-
-.posts-guardados .ver-btn:hover {
-  background-color: #45a049;
-  transform: translateY(-2px);
-}
-
-/* Botón Eliminar (rojo) */
-.posts-guardados .eliminar-btn {
-  background-color: #f05b5b;
-}
-
-.posts-guardados .eliminar-btn:hover {
-  background-color: #d30e0e;
-  transform: translateY(-2px);
-}
-
-/* --- TARJETAS CLICABLES --- */
-
-/* Opcional: animación hover como la de tus tarjetas */
-.posts-guardados .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 25px rgba(4 55 219 / 20%);
-}
-
 /* CSS de figma gallery */
 .gallery {
   position: relative;
@@ -201,20 +27,21 @@ dialog::backdrop {
   display: flex;
   flex-direction: column;
   width: 264px;
-  height: 188px;
   align-items: center;
-  justify-content: space-around;
-  gap: 20px;
+  justify-content: flex-start;
   position: absolute;
   top: calc(50% - 194px);
   left: calc(50% - 132px);
+  overflow-y: auto;
+  max-height: 400px;
+  gap: 15px;
 }
 
 .gallery .entries {
   position: relative;
-  align-self: stretch;
   width: 100%;
   height: 143.75px;
+  flex: 0 0 auto;
   border-radius: 16.59px;
   overflow: hidden;
   box-shadow: -4px 4px 4px #00000040;
@@ -233,42 +60,6 @@ dialog::backdrop {
   font-size: 13.8px;
   letter-spacing: 0;
   line-height: normal;
-}
-
-.gallery .detail {
-  position: absolute;
-  top: 100px;
-  left: 220px;
-  width: 37px;
-  height: 38px;
-}
-
-.gallery .ellipse {
-  position: absolute;
-  top: 4px;
-  left: 1px;
-  width: 29px;
-  height: 29px;
-  background-color: var(--neutral-light);
-  border-radius: 14.51px;
-}
-
-.gallery .chevron-backward {
-  position: absolute;
-  top: 6px;
-  left: 3px;
-  width: 28px;
-  height: 26px;
-  transform: rotate(180deg);
-}
-
-.gallery .icon {
-  position: absolute;
-  width: 30.83%;
-  height: 50%;
-  top: 25%;
-  left: 33.33%;
-  transform: rotate(-180deg);
 }
 
 .gallery .nav {
@@ -448,15 +239,86 @@ icon-and-text .text {
   flex-direction: column;
   align-items: center;
   gap: 6px;
+  flex: 0 0 auto;
+  justify-content: center;
+  position: relative;
 }
 
-/* Corregir typo en el CSS original */
-.gallery .icon-and-text .text {
-  flex: 0 0 auto;
-  display: flex; /* era inline-flex */
-  flex-direction: column;
+/* Nombre común del animal sobre la imagen */
+.gallery .common-name {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  font-family: Barlow-Bold, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 18px;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 70%);
+  letter-spacing: 0.5px;
+}
+
+/* Hacer que las entries sean scrollables si hay muchas */
+
+/* Mejorar el botón de detalle */
+.gallery .detail {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gallery .detail:hover {
+  transform: scale(1.1);
+}
+
+.detail-button {
+  display: inline-block;
+  position: absolute;       /* o relative si lo prefieres */
+  top: 200px;
+  right: 220px;
+  cursor: pointer;
+}
+
+/* Botón circular con la flecha */
+.detail-button-image {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  position: relative;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+/* Fondo circular detrás de la flecha */
+.ellipse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(0 0 0 /0.5%); /* fondo semi-transparente */
+  transition: background-color 0.3s ease;
+  z-index: 0;
+}
+
+/* Icono de flecha */
+.chevron-backward .icon {
+  width: 20px;
+  height: 20px;
+  stroke: white;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+/* Hover: efecto de pop y cambio de fondo */
+.detail-button-image:hover .ellipse {
+  background-color: rgba(0 0 0 /0.7%);
+}
+
+.detail-button-image:hover .icon {
+  transform: scale(1.2);
 }

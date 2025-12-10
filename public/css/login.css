@@ -38,6 +38,11 @@
 .log-in .span {
   font-family: Barlow-Bold, Helvetica, sans-serif;
   font-weight: 700;
+  color: var(--secondary-light);
+}
+
+.log-in .span a:visited {
+  color: var(--secondary-base); /* color al volver después de visitarlo */
 }
 
 .log-in .button-cat {
@@ -105,12 +110,17 @@
   width: 79px;
   font-family: Barlow-Regular, Helvetica, sans-serif;
   font-weight: 400;
-  color: var(--neutral-light);
+  color: var(--secondary-light);
   font-size: 14px;
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
+  
+}
+
+.log-in .text-wrapper-4 a:visited {
+  color: var(--secondary-base); /* color al volver después de visitarlo */
 }
 
 .log-in .text-wrapper-5 {

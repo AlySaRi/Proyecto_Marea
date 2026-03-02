@@ -1,5 +1,4 @@
 // src/app.js
-import 'dotenv/config';
 import express from "express";
 import { engine } from "express-handlebars";
 
@@ -8,19 +7,12 @@ import { engine } from "express-handlebars";
 import postRouter from "./routes/posts.routes.js";
 import authRouter from "./routes/auth.routes.js";
 
-// Conexión BD
-import connectDB from "./config/db.js";
-
 // Middlware de Sesión
 import session from "express-session";
 import MongoStore from "connect-mongo";
 
 // ---------- CONFIGURAR APP ----------
 const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Conectar a MongoDB UNA sola vez
-connectDB();
 
 // ---------- MIDDLEWARES ----------
 app.use(express.urlencoded({ extended: true }));
@@ -34,7 +26,7 @@ app.use(
     saveUninitialized: false,
     store: MongoStore.create({
       mongoUrl:
-        process.env.MONGODB_URI || "mongodb://localhost:27017/marea_sessions",
+        process.env.MONGODB_URI,
       collectionName: "sessions",
     }), // esto genera una colección 'sessions' en la base de datos para almacenar las sesiones de los usuarios
     cookie: {

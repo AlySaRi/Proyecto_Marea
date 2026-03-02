@@ -152,10 +152,10 @@ public/
 
 ## 📷 Screenshots
 
-Add screenshots here (Login, Gallery, Upload, AI Result, Edit screen).
 
 ---
 
 ## 📄 License
 
 Educational / portfolio project.
+

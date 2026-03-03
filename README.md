@@ -163,7 +163,6 @@ public/
 
 ## 📷 Screenshots
 
-_Add screenshots here (Login, Gallery, Upload, AI Result, Edit screen)._
 
 ---
 

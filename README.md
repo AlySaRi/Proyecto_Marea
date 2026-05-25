@@ -168,4 +168,4 @@ public/
 
 ## 📄 License
 
-Educational / portfolio project.
+Demo project.
